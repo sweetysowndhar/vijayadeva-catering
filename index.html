@@ -1,0 +1,841 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Vijayadeva Catering | Exquisite Culinary Services & Royal Feasts</title>
+  <meta name="description" content="Savor traditions and craft memories with Vijayadeva Catering. Under the leadership of our legendary Chief Chef, we deliver premium vegetarian and non-vegetarian catering.">
+  
+  <!-- FontAwesome for Premium Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  
+  <!-- Link to External Stylesheet -->
+  <link rel="stylesheet" href="style.css">
+
+</head>
+<body>
+
+
+  <!-- Background Glow FX -->
+  <div class="bg-glow" style="top: 10%; left: 5%;"></div>
+  <div class="bg-glow" style="top: 40%; right: 5%;"></div>
+  <div class="bg-glow" style="top: 75%; left: 10%;"></div>
+
+  <!-- Header Navigation -->
+  <header>
+    <div class="nav-container">
+      <a href="#" class="logo">
+        <span class="logo-main">VIJAYADEVA</span>
+        <span class="logo-sub" data-i18n="logo_sub">Catering Service</span>
+      </a>
+      
+      <div class="nav-right">
+        <ul class="nav-links">
+          <li><a href="#home" data-i18n="nav_home">Home</a></li>
+          <li><a href="#about" data-i18n="nav_legacy">Legacy</a></li>
+          <li><a href="#services" data-i18n="nav_services">Services</a></li>
+          <li><a href="#menu" data-i18n="nav_menu">Menu</a></li>
+          <li><a href="#pricing">Pricing</a></li>
+          <li><a href="#gallery" data-i18n="nav_gallery">Gallery</a></li>
+          <li><a href="#testimonials" data-i18n="nav_reviews">Reviews</a></li>
+          <li><a href="#contact" class="cta-btn" data-i18n="nav_book">Book Event</a></li>
+        </ul>
+
+        <div class="lang-switcher">
+          <button class="lang-btn active" data-lang="en">EN</button>
+          <span class="lang-separator">|</span>
+          <button class="lang-btn" data-lang="ta">தமிழ்</button>
+        </div>
+        
+        <div class="menu-toggle" id="mobileMenuBtn">
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="hero" id="home">
+    <div class="hero-content">
+      <span class="hero-tagline" data-i18n="hero_tagline">Savoring Traditions, Crafting Memories</span>
+      <h1 class="hero-title" data-i18n="hero_title">A Feast of <span class="gold-text">Flavors</span>, Crafted to Perfection</h1>
+      <p class="hero-desc" data-i18n="hero_desc">Experience royal dining curated by our legendary Chief Chef. Bringing three decades of authentic Vegetarian & Non-Vegetarian culinary mastery to your grandest celebrations.</p>
+      <div class="hero-btns">
+        <a href="#menu" class="cta-btn" data-i18n="hero_btn_menu">Explore Our Menu</a>
+        <a href="#contact" class="secondary-btn" data-i18n="hero_btn_quote">Request a Quote</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- About Legacy Section -->
+  <section class="about" id="about">
+    <div class="container">
+      <div class="about-grid">
+        <div class="about-img-container reveal">
+          <div class="about-img-wrapper">
+            <img src="assets/chief_chef.png" alt="Chief Chef Vijayadeva cooking">
+          </div>
+          <div class="badge-experience">
+            <span class="number">30+</span>
+            <span class="label" data-i18n="about_badge_label">Years of Mastery</span>
+          </div>
+        </div>
+        
+        <div class="about-content reveal" style="transition-delay: 0.15s;">
+          <span class="section-subtitle" data-i18n="about_subtitle">Our Legacy</span>
+          <h2 class="section-title" data-i18n="about_title">A Lifelong Passion for Culinary Excellence</h2>
+          <div class="section-divider" style="margin: 0 0 2rem 0;"></div>
+          <h3 data-i18n="about_chef_title">Inspired by Chief Chef Vijayadeva</h3>
+          <p class="about-text" data-i18n="about_text_1">
+            Every dish we serve carries a story of dedication. Founded by our head Chief Chef (my father), Vijayadeva Catering was built on the values of absolute taste, authentic preparation, and hospitality that touches the heart. We combine traditional recipes handed down through generations with modern culinary arts to produce culinary spectacles.
+          </p>
+          <p class="about-text" style="margin-top: -1rem;" data-i18n="about_text_2">
+            Whether it's a traditional vegetarian banquet cooked in strict compliance with custom or a rich, slow-simmered non-vegetarian feast bursting with spices, his hands-on touch guarantees perfection in every bite.
+          </p>
+          
+          <div class="about-highlights">
+            <div class="highlight-item">
+              <div class="highlight-icon"><i class="fas fa-utensils"></i></div>
+              <div>
+                <h4 class="highlight-title" data-i18n="about_h1_title">Artisanal Spices</h4>
+                <p class="highlight-desc" data-i18n="about_h1_desc">We grind all our spices in-house to capture natural oils and authentic aroma.</p>
+              </div>
+            </div>
+            
+            <div class="highlight-item">
+              <div class="highlight-icon"><i class="fas fa-hands-wash"></i></div>
+              <div>
+                <h4 class="highlight-title" data-i18n="about_h2_title">Flawless Hygiene</h4>
+                <p class="highlight-desc" data-i18n="about_h2_desc">Strict quality controls, fresh local ingredients, and sanitized kitchens.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Services Section -->
+  <section class="services" id="services">
+    <div class="container">
+      <div class="section-header reveal">
+        <span class="section-subtitle" data-i18n="services_subtitle">Our Offerings</span>
+        <h2 class="section-title" data-i18n="services_title">Catering for Every Occasion</h2>
+        <div class="section-divider"></div>
+      </div>
+
+      <div class="services-grid">
+        <div class="service-card reveal">
+          <div class="service-icon"><i class="fas fa-ring"></i></div>
+          <h3 class="service-title" data-i18n="service1_title">Grand Weddings</h3>
+          <p class="service-desc" data-i18n="service1_desc">Complete wedding banquets, from welcome drinks to custom dessert counters. Styled to match your theme and feed your guests like royalty.</p>
+        </div>
+
+        <div class="service-card reveal" style="transition-delay: 0.1s;">
+          <div class="service-icon"><i class="fas fa-briefcase"></i></div>
+          <h3 class="service-title" data-i18n="service2_title">Corporate Events</h3>
+          <p class="service-desc" data-i18n="service2_desc">Impress clients and energize teams with premium buffets, high teas, and box lunches tailored to your schedule and corporate branding.</p>
+        </div>
+
+        <div class="service-card reveal" style="transition-delay: 0.2s;">
+          <div class="service-icon"><i class="fas fa-birthday-cake"></i></div>
+          <h3 class="service-title" data-i18n="service3_title">Private Celebrations</h3>
+          <p class="service-desc" data-i18n="service3_desc">Birthdays, anniversaries, housewarmings, or family gatherings. We design menus that fit small, intimate get-togethers perfectly.</p>
+        </div>
+
+        <div class="service-card reveal" style="transition-delay: 0.3s;">
+          <div class="service-icon"><i class="fas fa-calendar-alt"></i></div>
+          <h3 class="service-title" data-i18n="service4_title">Festive Feasts</h3>
+          <p class="service-desc" data-i18n="service4_desc">Traditional multi-course feasts for religious ceremonies and cultural festivals, cooked strictly in traditional guidelines.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== PRICING SECTION ===== -->
+  <section class="pricing-section" id="pricing">
+    <div class="container">
+      <div class="section-header reveal">
+        <span class="section-subtitle">Transparent Pricing</span>
+        <h2 class="section-title">Our <span class="gold-text">Catering</span> Packages</h2>
+        <div class="section-divider"></div>
+        <p class="section-desc">All prices are in Indian Rupees (₹). Choose with or without supply based on your need.</p>
+      </div>
+
+      <!-- Tab Buttons -->
+      <div class="pricing-tabs reveal">
+        <button class="pricing-tab-btn active" data-tab="veg-pricing">
+          <i class="fas fa-leaf"></i> Vegetarian Packages
+        </button>
+        <button class="pricing-tab-btn" data-tab="nonveg-pricing">
+          <i class="fas fa-drumstick-bite"></i> Non-Vegetarian Packages
+        </button>
+      </div>
+
+      <!-- VEG PRICING TABLE -->
+      <div class="pricing-table-wrap reveal active" id="veg-pricing">
+        <div class="pricing-note"><i class="fas fa-info-circle"></i> Veg pricing is based on number of guests</div>
+        <div class="pricing-table-container">
+          <table class="pricing-table">
+            <thead>
+              <tr>
+                <th><i class="fas fa-users"></i> Guests</th>
+                <th><i class="fas fa-utensils"></i> Without Supply<br><small>(Food Only)</small></th>
+                <th><i class="fas fa-truck"></i> With Supply<br><small>(Food + Equipment + Staff)</small></th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr class="pricing-row">
+                <td><span class="guest-badge">200 People</span></td>
+                <td><span class="price-tag">₹5,000</span></td>
+                <td><span class="price-tag supply">₹17,000</span></td>
+              </tr>
+              <tr class="pricing-row highlight">
+                <td><span class="guest-badge popular">500 People ⭐ Popular</span></td>
+                <td><span class="price-tag">₹15,000</span></td>
+                <td><span class="price-tag supply">₹25,000</span></td>
+              </tr>
+              <tr class="pricing-row">
+                <td><span class="guest-badge">1000 People</span></td>
+                <td><span class="price-tag">₹30,000</span></td>
+                <td><span class="price-tag supply">₹90,000</span></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <div class="pricing-legend">
+          <span><i class="fas fa-circle" style="color:#10b981"></i> Without Supply — Food preparation cost only</span>
+          <span><i class="fas fa-circle" style="color:#c5a880"></i> With Supply — Includes utensils, serving staff & equipment</span>
+        </div>
+      </div>
+
+      <!-- NON-VEG PRICING TABLE -->
+      <div class="pricing-table-wrap reveal" id="nonveg-pricing">
+        <div class="pricing-note"><i class="fas fa-info-circle"></i> Non-veg pricing is based on quantity (kg)</div>
+        <div class="pricing-table-container">
+          <table class="pricing-table">
+            <thead>
+              <tr>
+                <th><i class="fas fa-weight-hanging"></i> Quantity</th>
+                <th><i class="fas fa-utensils"></i> Without Supply<br><small>(Food Only)</small></th>
+                <th><i class="fas fa-truck"></i> With Supply<br><small>(Food + Equipment + Staff)</small></th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr class="pricing-row">
+                <td><span class="guest-badge">30 kg</span></td>
+                <td><span class="price-tag">₹4,500</span></td>
+                <td><span class="price-tag supply">₹12,000</span></td>
+              </tr>
+              <tr class="pricing-row highlight">
+                <td><span class="guest-badge popular">60 kg ⭐ Popular</span></td>
+                <td><span class="price-tag">₹9,000</span></td>
+                <td><span class="price-tag supply">₹17,000</span></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <div class="pricing-legend">
+          <span><i class="fas fa-circle" style="color:#10b981"></i> Without Supply — Cooking cost per kg only</span>
+          <span><i class="fas fa-circle" style="color:#c5a880"></i> With Supply — Includes utensils, serving staff & delivery</span>
+        </div>
+      </div>
+
+      <!-- Call to Action -->
+      <div class="pricing-cta reveal">
+        <p>Need a custom quote for your event size?</p>
+        <a href="#contact" class="cta-btn"><i class="fas fa-phone-alt"></i> Get Custom Quote</a>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Interactive Catering Menu Section -->
+  <section class="menu-section" id="menu">
+    <div class="container">
+      <div class="section-header reveal">
+        <span class="section-subtitle" data-i18n="menu_subtitle">Delicious Creations</span>
+        <h2 class="section-title" data-i18n="menu_title">Our Signature Dishes</h2>
+        <div class="section-divider"></div>
+      </div>
+
+      <div class="menu-filter-buttons reveal">
+        <button class="filter-btn active" data-filter="all" data-i18n="menu_filter_all">All Specialties</button>
+        <button class="filter-btn" data-filter="veg" data-i18n="menu_filter_veg">Pure Vegetarian</button>
+        <button class="filter-btn" data-filter="non-veg" data-i18n="menu_filter_nonveg">Non-Vegetarian</button>
+      </div>
+
+      <div class="menu-grid">
+        <!-- Menu Item 1: Vegetarian -->
+        <div class="menu-item reveal" data-category="veg">
+          <div class="menu-item-img">
+            <img src="assets/veg_feast.png" alt="Royal Vegetarian Feast">
+            <span class="menu-tag veg" data-i18n="menu_item1_tag"><i class="fas fa-leaf"></i> Veg Special</span>
+          </div>
+          <div class="menu-item-info">
+            <div class="menu-item-header">
+              <h3 class="menu-item-title" data-i18n="menu_item1_title">Royal Vegetarian Feast</h3>
+              <span class="menu-item-price">$$</span>
+            </div>
+            <p class="menu-item-desc" data-i18n="menu_item1_desc">A premium thali experience featuring Paneer Butter Masala, Saffron Pulao, Slow-cooked Dal Makhani, Fresh Naan, and raita, styled traditionally.</p>
+            <div class="menu-item-features">
+              <span class="menu-feature" data-i18n="menu_item1_feat1"><i class="far fa-clock"></i> Lunch/Dinner</span>
+              <span class="menu-feature" data-i18n="menu_item1_feat2"><i class="fas fa-pepper-hot"></i> Mild/Medium</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Menu Item 2: Non-Vegetarian -->
+        <div class="menu-item reveal" data-category="non-veg" style="transition-delay: 0.1s;">
+          <div class="menu-item-img">
+            <img src="assets/nonveg_feast.png" alt="Vijayadeva Mutton Biryani">
+            <span class="menu-tag non-veg" data-i18n="menu_item2_tag"><i class="fas fa-drumstick-bite"></i> Chef Signature</span>
+          </div>
+          <div class="menu-item-info">
+            <div class="menu-item-header">
+              <h3 class="menu-item-title" data-i18n="menu_item2_title">Vijayadeva Mutton Biryani</h3>
+              <span class="menu-item-price">$$$</span>
+            </div>
+            <p class="menu-item-desc" data-i18n="menu_item2_desc">Steam-cooked long grain basmati rice, tender farm-sourced mutton pieces, and our chief chef's private secret spice blend. Served with raita.</p>
+            <div class="menu-item-features">
+              <span class="menu-feature" data-i18n="menu_item2_feat1"><i class="far fa-clock"></i> Main Course</span>
+              <span class="menu-feature" data-i18n="menu_item2_feat2"><i class="fas fa-pepper-hot"></i> Medium Spicy</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Menu Item 3: Vegetarian -->
+        <div class="menu-item reveal" data-category="veg" style="transition-delay: 0.2s;">
+          <div class="menu-item-img">
+            <img src="assets/paneer_tikka.png" alt="Paneer Tikka Platter">
+            <span class="menu-tag veg" data-i18n="menu_item3_tag"><i class="fas fa-leaf"></i> Vegetarian</span>
+          </div>
+          <div class="menu-item-info">
+            <div class="menu-item-header">
+              <h3 class="menu-item-title" data-i18n="menu_item3_title">Shahi Paneer Tikka Platter</h3>
+              <span class="menu-item-price">$$</span>
+            </div>
+            <p class="menu-item-desc" data-i18n="menu_item3_desc">Fresh cottage cheese cubes marinated in premium Greek yogurt, mustard oil, and hand-ground spices, grilled to perfection in clay tandoors.</p>
+            <div class="menu-item-features">
+              <span class="menu-feature" data-i18n="menu_item3_feat1"><i class="far fa-clock"></i> Appetizer</span>
+              <span class="menu-feature" data-i18n="menu_item3_feat2"><i class="fas fa-pepper-hot"></i> Medium Spicy</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Menu Item 4: Non-Vegetarian -->
+        <div class="menu-item reveal" data-category="non-veg">
+          <div class="menu-item-img">
+            <img src="assets/pepper_chicken.png" alt="Pepper Chicken">
+            <span class="menu-tag non-veg" data-i18n="menu_item4_tag"><i class="fas fa-drumstick-bite"></i> Chicken</span>
+          </div>
+          <div class="menu-item-info">
+            <div class="menu-item-header">
+              <h3 class="menu-item-title" data-i18n="menu_item4_title">Vijayadeva Pepper Chicken</h3>
+              <span class="menu-item-price">$$$</span>
+            </div>
+            <p class="menu-item-desc" data-i18n="menu_item4_desc">Tender chicken pieces slow-cooked in freshly cracked black pepper, coconut oil, curry leaves, and our chef's secret masala blend.</p>
+            <div class="menu-item-features">
+              <span class="menu-feature" data-i18n="menu_item4_feat1"><i class="far fa-clock"></i> Main Course</span>
+              <span class="menu-feature" data-i18n="menu_item4_feat2"><i class="fas fa-pepper-hot"></i> Pepper Spicy</span>
+            </div>
+          </div>
+        </div>
+
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Gallery Section -->
+  <section class="gallery" id="gallery">
+    <div class="container">
+      <div class="section-header reveal">
+        <span class="section-subtitle" data-i18n="gallery_subtitle">Visual Delights</span>
+        <h2 class="section-title" data-i18n="gallery_title">Our Food & Event Gallery</h2>
+        <div class="section-divider"></div>
+      </div>
+
+      <div class="gallery-grid">
+        <div class="gallery-item reveal">
+          <img src="assets/veg_feast.png" alt="Catering plating presentation">
+          <div class="gallery-overlay">
+            <i class="fas fa-search-plus"></i>
+            <h4 data-i18n="gallery_item1_title">Traditional Thali Plating</h4>
+            <p data-i18n="gallery_item1_desc">Vegetarian Catering</p>
+          </div>
+        </div>
+
+        <div class="gallery-item reveal" style="transition-delay: 0.05s;">
+          <img src="assets/hero_banquet.png" alt="Luxury Buffet Setup">
+          <div class="gallery-overlay">
+            <i class="fas fa-search-plus"></i>
+            <h4 data-i18n="gallery_item2_title">Elegant Table Settings</h4>
+            <p data-i18n="gallery_item2_desc">Grand Weddings</p>
+          </div>
+        </div>
+
+        <div class="gallery-item reveal" style="transition-delay: 0.1s;">
+          <img src="assets/nonveg_feast.png" alt="Chef cooked biryani pot">
+          <div class="gallery-overlay">
+            <i class="fas fa-search-plus"></i>
+            <h4 data-i18n="gallery_item3_title">Pot Biryani Display</h4>
+            <p data-i18n="gallery_item3_desc">Chef's Signature</p>
+          </div>
+        </div>
+
+        <div class="gallery-item reveal" style="transition-delay: 0.15s;">
+          <img src="https://images.unsplash.com/photo-1668236543090-82eba5ee5976?auto=format&fit=crop&w=600&q=80" alt="Traditional South Indian Masala Dosa">
+          <div class="gallery-overlay">
+            <i class="fas fa-search-plus"></i>
+            <h4 data-i18n="gallery_item4_title">Traditional Masala Dosa</h4>
+            <p data-i18n="gallery_item4_desc">Pure Veg Specialties</p>
+          </div>
+        </div>
+
+        <div class="gallery-item reveal" style="transition-delay: 0.2s;">
+          <img src="https://images.unsplash.com/photo-1601050690597-df056fb4ce78?auto=format&fit=crop&w=600&q=80" alt="Crispy Vegetable Samosas">
+          <div class="gallery-overlay">
+            <i class="fas fa-search-plus"></i>
+            <h4 data-i18n="gallery_item5_title">Crispy Samosa Platter</h4>
+            <p data-i18n="gallery_item5_desc">Pure Veg Appetizers</p>
+          </div>
+        </div>
+
+        <div class="gallery-item reveal" style="transition-delay: 0.25s;">
+          <img src="https://images.unsplash.com/photo-1631452180519-c014fe946bc7?auto=format&fit=crop&w=600&q=80" alt="Paneer Butter Masala Curry">
+          <div class="gallery-overlay">
+            <i class="fas fa-search-plus"></i>
+            <h4 data-i18n="gallery_item6_title">Premium Paneer Kadhai</h4>
+            <p data-i18n="gallery_item6_desc">Pure Veg Main Course</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Testimonials Carousel Section -->
+  <section class="testimonials" id="testimonials">
+    <div class="container">
+      <div class="section-header reveal">
+        <span class="section-subtitle" data-i18n="testimonials_subtitle">Heartfelt Feedback</span>
+        <h2 class="section-title" data-i18n="testimonials_title">What Our Clients Say</h2>
+        <div class="section-divider"></div>
+      </div>
+
+      <div class="slider-container reveal">
+        <!-- Slide 1 -->
+        <div class="testimonial-slide active">
+          <div class="quote-icon"><i class="fas fa-quote-left"></i></div>
+          <p class="testimonial-text" data-i18n="testimonial1_text">"Vijayadeva Catering managed the food for my daughter's wedding, and our guests are still talking about the mutton biryani! The taste was absolutely heavenly, and the service was extremely professional. Highly recommended!"</p>
+          <div class="client-info">
+            <span class="client-name" data-i18n="testimonial1_name">Karthik Srinivasan</span>
+            <span class="client-event" data-i18n="testimonial1_event">Wedding Banquet at Chennai</span>
+          </div>
+        </div>
+
+        <!-- Slide 2 -->
+        <div class="testimonial-slide">
+          <div class="quote-icon"><i class="fas fa-quote-left"></i></div>
+          <p class="testimonial-text" data-i18n="testimonial2_text">"For our corporate annual meet, we selected their vegetarian buffet option. The Paneer Butter Masala and Saffron Pulao were outstanding. Flawless presentation, premium taste, and highly hygienic service."</p>
+          <div class="client-info">
+            <span class="client-name" data-i18n="testimonial2_name">Pooja Sharma</span>
+            <span class="client-event" data-i18n="testimonial2_event">Corporate Event, Tech Park</span>
+          </div>
+        </div>
+
+        <!-- Slide 3 -->
+        <div class="testimonial-slide">
+          <div class="quote-icon"><i class="fas fa-quote-left"></i></div>
+          <p class="testimonial-text" data-i18n="testimonial3_text">"We hired them for a private home puja ceremony. Their traditional vegetarian catering was done with so much purity and respect. The spices were perfectly balanced, and the crew was incredibly polite."</p>
+          <div class="client-info">
+            <span class="client-name" data-i18n="testimonial3_name">Ramachandran Iyer</span>
+            <span class="client-event" data-i18n="testimonial3_event">Housewarming Festive Lunch</span>
+          </div>
+        </div>
+
+        <!-- Controls -->
+        <div class="slider-controls">
+          <button class="slider-arrow prev-slide"><i class="fas fa-chevron-left"></i></button>
+          <div class="slider-dots"></div>
+          <button class="slider-arrow next-slide"><i class="fas fa-chevron-right"></i></button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact & Inquiry Booking Form Section -->
+  <section class="contact-section" id="contact">
+    <div class="container">
+      <div class="contact-grid">
+        <div class="contact-info-panel reveal">
+          <div>
+            <span class="section-subtitle" data-i18n="contact_subtitle">Let's Connect</span>
+            <h2 class="section-title" data-i18n="contact_title">Schedule a Culinary Journey</h2>
+            <div class="section-divider" style="margin: 0 0 2rem 0;"></div>
+            <p class="contact-desc" data-i18n="contact_desc">Ready to craft an unforgettable dining experience for your guests? Give us a call, drop us an email, or fill out the booking form to receive a customized quote.</p>
+          </div>
+
+          <div class="contact-details">
+            <div class="contact-detail-item">
+              <div class="contact-detail-icon"><i class="fas fa-map-marker-alt"></i></div>
+              <div class="contact-detail-content">
+                <h5 data-i18n="contact_office_title">Our Office</h5>
+                <p data-i18n="contact_office_val">Vizhuperundhurai, Nangudi Post, Srimushnam TK, Cuddalore District</p>
+              </div>
+            </div>
+
+            <div class="contact-detail-item">
+              <div class="contact-detail-icon"><i class="fas fa-phone-alt"></i></div>
+              <div class="contact-detail-content">
+                <h5 data-i18n="contact_phone_title">Call Us Directly</h5>
+                <p><a href="tel:+919003952911">+91 90039 52911</a> / <a href="tel:+917598695797">+91 75986 95797</a></p>
+              </div>
+            </div>
+
+            <div class="contact-detail-item">
+              <div class="contact-detail-icon"><i class="fas fa-envelope"></i></div>
+              <div class="contact-detail-content">
+                <h5 data-i18n="contact_email_title">Email Inquiry</h5>
+                <p><a href="mailto:inquire@vijayadevacatering.com">inquire@vijayadevacatering.com</a></p>
+              </div>
+            </div>
+          </div>
+
+          <div class="social-links">
+            <a href="#" class="social-icon"><i class="fab fa-facebook-f"></i></a>
+            <a href="#" class="social-icon"><i class="fab fa-instagram"></i></a>
+            <a href="#" class="social-icon"><i class="fab fa-youtube"></i></a>
+            <a href="https://wa.me/919344536941" target="_blank" rel="noopener noreferrer" class="social-icon" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+          </div>
+        </div>
+
+        <div class="form-card reveal" style="transition-delay: 0.15s;">
+          <h3 class="form-title" data-i18n="form_title">Request a Custom Proposal</h3>
+          <form id="bookingForm">
+            <div class="form-grid">
+              <div class="form-group">
+                <label for="name" class="form-label" data-i18n="form_label_name">Your Full Name</label>
+                <input type="text" id="name" class="form-input" data-i18n-placeholder="form_placeholder_name" placeholder="e.g. Rajesh Kumar" required>
+              </div>
+
+              <div class="form-group">
+                <label for="email" class="form-label" data-i18n="form_label_email">Email Address</label>
+                <input type="email" id="email" class="form-input" data-i18n-placeholder="form_placeholder_email" placeholder="e.g. rajesh@email.com" required>
+              </div>
+
+              <div class="form-group">
+                <label for="phone" class="form-label" data-i18n="form_label_phone">Phone Number</label>
+                <input type="tel" id="phone" class="form-input" data-i18n-placeholder="form_placeholder_phone" placeholder="e.g. +91 98400 12345" required>
+              </div>
+
+              <div class="form-group">
+                <label for="eventDate" class="form-label" data-i18n="form_label_date">Event Date</label>
+                <input type="date" id="eventDate" class="form-input" required>
+              </div>
+
+              <div class="form-group">
+                <label for="guests" class="form-label" data-i18n="form_label_guests">Estimated Guests</label>
+                <input type="number" id="guests" class="form-input" min="20" data-i18n-placeholder="form_placeholder_guests" placeholder="Min. 20 guests" required>
+              </div>
+
+              <div class="form-group">
+                <label for="cuisine" class="form-label" data-i18n="form_label_cuisine">Cuisine Preference</label>
+                <select id="cuisine" class="form-select" required>
+                  <option value="" disabled selected data-i18n="form_cuisine_placeholder">Select option</option>
+                  <option value="veg" data-i18n="form_cuisine_veg">Pure Vegetarian Feast</option>
+                  <option value="non-veg" data-i18n="form_cuisine_nonveg">Non-Vegetarian Delights</option>
+                  <option value="both" data-i18n="form_cuisine_both">Both (Veg & Non-Veg)</option>
+                </select>
+              </div>
+
+              <div class="form-group full-width">
+                <label for="message" class="form-label" data-i18n="form_label_details">Event Details & Special Requests</label>
+                <textarea id="message" class="form-textarea" data-i18n-placeholder="form_placeholder_details" placeholder="Tell us about your event (e.g. Wedding, Corporate lunch, special dishes requested, dietary requirements...)"></textarea>
+              </div>
+            </div>
+
+            <button type="submit" class="cta-btn submit-btn" data-i18n="form_submit_btn">Submit Booking Request</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Success Modal Overlay -->
+  <div class="modal-overlay" id="successModal">
+    <div class="success-modal">
+      <div class="success-icon"><i class="fas fa-check-circle"></i></div>
+      <h3 class="modal-title" data-i18n="modal_title">Inquiry Submitted!</h3>
+      <p class="modal-text" data-i18n="modal_text">Thank you for contacting Vijayadeva Catering. Our events team will reach out to you within 24 hours to present a customized menu and proposal.</p>
+      <button class="cta-btn modal-btn" id="closeModal" data-i18n="modal_close_btn">Close Window</button>
+    </div>
+  </div>
+
+  <!-- Footer Section -->
+  <footer>
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <h4>VIJAYADEVA CATERING</h4>
+        <p data-i18n="footer_brand_desc">Premium catering services presenting authentic traditional tastes and professional event styling since 1996.</p>
+        <p class="gold-text"><i class="fas fa-medal"></i> <span data-i18n="footer_brand_badge">Guided by Chief Chef Legacy</span></p>
+      </div>
+
+      <div>
+        <h5 class="footer-title" data-i18n="footer_title_links">Quick Links</h5>
+        <ul class="footer-links">
+          <li><a href="#home" data-i18n="nav_home">Home</a></li>
+          <li><a href="#about" data-i18n="nav_legacy">Our Legacy (Chief Chef)</a></li>
+          <li><a href="#services" data-i18n="nav_services">Our Services</a></li>
+          <li><a href="#menu" data-i18n="nav_menu">Our Menu</a></li>
+          <li><a href="#gallery" data-i18n="nav_gallery">Catering Gallery</a></li>
+        </ul>
+      </div>
+
+      <div>
+        <h5 class="footer-title" data-i18n="footer_title_hours">Operating Hours</h5>
+        <div class="opening-hours">
+          <div class="hours-item">
+            <span class="hours-day" data-i18n="footer_hours_item1_day">Monday - Saturday</span>
+            <span class="hours-time" data-i18n="footer_hours_item1_time">09:00 AM - 08:00 PM</span>
+          </div>
+          <div class="hours-item">
+            <span class="hours-day" data-i18n="footer_hours_item2_day">Sunday</span>
+            <span class="hours-time" data-i18n="footer_hours_item2_time">10:00 AM - 05:00 PM</span>
+          </div>
+          <div class="hours-item">
+            <span class="hours-day" data-i18n="footer_hours_item3_day">Events Booking</span>
+            <span class="hours-time" data-i18n="footer_hours_item3_time">24/7 Availability</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <span class="copyright" data-i18n="footer_copyright">&copy; 2026 Vijayadeva Catering. All rights reserved.</span>
+      <span class="credits"><span data-i18n="footer_credits_text">Designed with honor for our Chief Chef | Powered by</span> <a href="#">Antigravity</a></span>
+    </div>
+  </footer>
+
+  <!-- Scroll To Top Button -->
+  <div class="scroll-top"><i class="fas fa-chevron-up"></i></div>
+
+  <!-- Floating WhatsApp Button -->
+  <a href="https://wa.me/919344536941" target="_blank" rel="noopener noreferrer" class="whatsapp-float" aria-label="Chat with us on WhatsApp">
+    <i class="fab fa-whatsapp"></i>
+  </a>
+
+  <!-- Link to External Logic -->
+  <script src="script.js"></script>
+
+  <!-- Inline Language Switcher - Works independently, no cache issues -->
+  <script>
+  (function() {
+    var translations = {
+      en: {
+        logo_sub:"Catering Service",nav_home:"Home",nav_legacy:"Legacy",nav_services:"Services",
+        nav_menu:"Menu",nav_gallery:"Gallery",nav_reviews:"Reviews",nav_book:"Book Event",
+        hero_tagline:"Savoring Traditions, Crafting Memories",
+        hero_title:"A Feast of Flavors, Crafted to Perfection",
+        hero_desc:"Experience royal dining curated by our legendary Chief Chef. Bringing three decades of authentic Vegetarian & Non-Vegetarian culinary mastery to your grandest celebrations.",
+        hero_btn_menu:"Explore Our Menu",hero_btn_quote:"Request a Quote",
+        about_badge_label:"Years of Mastery",about_subtitle:"Our Legacy",
+        about_title:"A Lifelong Passion for Culinary Excellence",
+        about_chef_title:"Inspired by Chief Chef Vijayadeva",
+        about_text_1:"Every dish we serve carries a story of dedication. Founded by our head Chief Chef (my father), Vijayadeva Catering was built on the values of absolute taste, authentic preparation, and hospitality that touches the heart.",
+        about_text_2:"Whether it's a traditional vegetarian banquet or a rich non-vegetarian feast bursting with spices, his hands-on touch guarantees perfection in every bite.",
+        about_h1_title:"Artisanal Spices",about_h1_desc:"We grind all our spices in-house to capture natural oils and authentic aroma.",
+        about_h2_title:"Flawless Hygiene",about_h2_desc:"Strict quality controls, fresh local ingredients, and sanitized kitchens.",
+        services_subtitle:"Our Offerings",services_title:"Catering for Every Occasion",
+        service1_title:"Grand Weddings",service1_desc:"Complete wedding banquets from welcome drinks to dessert counters.",
+        service2_title:"Corporate Events",service2_desc:"Premium buffets, high teas, and box lunches for your team.",
+        service3_title:"Private Celebrations",service3_desc:"Birthdays, anniversaries and family gatherings with custom menus.",
+        service4_title:"Festive Feasts",service4_desc:"Traditional multi-course feasts for religious and cultural ceremonies.",
+        menu_subtitle:"Delicious Creations",menu_title:"Our Signature Dishes",
+        menu_filter_all:"All Specialties",menu_filter_veg:"Pure Vegetarian",menu_filter_nonveg:"Non-Vegetarian",
+        menu_item1_tag:"Veg Special",menu_item1_title:"Royal Vegetarian Feast",
+        menu_item1_desc:"Premium thali with Paneer Butter Masala, Saffron Pulao, Dal Makhani, Naan and raita.",
+        menu_item1_feat1:"Lunch/Dinner",menu_item1_feat2:"Mild/Medium",
+        menu_item2_tag:"Chef Signature",menu_item2_title:"Vijayadeva Mutton Biryani",
+        menu_item2_desc:"Steam-cooked basmati rice with tender mutton and our chef's secret spice blend.",
+        menu_item2_feat1:"Main Course",menu_item2_feat2:"Medium Spicy",
+        menu_item3_tag:"Vegetarian",menu_item3_title:"Shahi Paneer Tikka Platter",
+        menu_item3_desc:"Cottage cheese marinated in yogurt and hand-ground spices, grilled in clay tandoors.",
+        menu_item3_feat1:"Appetizer",menu_item3_feat2:"Medium Spicy",
+        menu_item4_tag:"Chicken",menu_item4_title:"Vijayadeva Pepper Chicken",
+        menu_item4_desc:"Tender chicken pieces slow-cooked in freshly cracked black pepper, coconut oil, curry leaves, and our chef's secret masala blend.",
+        menu_item4_feat1:"Main Course",menu_item4_feat2:"Pepper Spicy",
+        gallery_subtitle:"Visual Delights",gallery_title:"Our Food & Event Gallery",
+        gallery_item1_title:"Traditional Thali Plating",gallery_item1_desc:"Vegetarian Catering",
+        gallery_item2_title:"Elegant Table Settings",gallery_item2_desc:"Grand Weddings",
+        gallery_item3_title:"Pot Biryani Display",gallery_item3_desc:"Chef's Signature",
+        gallery_item4_title:"Traditional Masala Dosa",gallery_item4_desc:"Pure Veg Specialties",
+        gallery_item5_title:"Crispy Samosa Platter",gallery_item5_desc:"Pure Veg Appetizers",
+        gallery_item6_title:"Premium Paneer Kadhai",gallery_item6_desc:"Pure Veg Main Course",
+        testimonials_subtitle:"Heartfelt Feedback",testimonials_title:"What Our Clients Say",
+        testimonial1_text:'"Vijayadeva Catering managed our daughter\'s wedding food and our guests are still talking about the mutton biryani! Absolutely heavenly!"',
+        testimonial1_name:"Karthik Srinivasan",testimonial1_event:"Wedding Banquet at Chennai",
+        testimonial2_text:'"For our corporate meet we selected their vegetarian buffet. Paneer Butter Masala was outstanding. Flawless presentation and highly hygienic."',
+        testimonial2_name:"Pooja Sharma",testimonial2_event:"Corporate Event, Tech Park",
+        testimonial3_text:'"We hired them for a home puja. Traditional vegetarian catering done with purity and respect. Spices perfectly balanced and crew was polite."',
+        testimonial3_name:"Ramachandran Iyer",testimonial3_event:"Housewarming Festive Lunch",
+        contact_subtitle:"Let's Connect",contact_title:"Schedule a Culinary Journey",
+        contact_desc:"Ready to craft an unforgettable dining experience? Call us or fill out the booking form for a customized quote.",
+        contact_office_title:"Our Office",contact_office_val:"Vizhuperundhurai, Nangudi Post, Srimushnam TK, Cuddalore District",
+        contact_phone_title:"Call Us Directly",contact_email_title:"Email Inquiry",
+        form_title:"Request a Custom Proposal",form_label_name:"Your Full Name",
+        form_placeholder_name:"e.g. Rajesh Kumar",form_label_email:"Email Address",
+        form_placeholder_email:"e.g. rajesh@email.com",form_label_phone:"Phone Number",
+        form_placeholder_phone:"e.g. +91 98400 12345",form_label_date:"Event Date",
+        form_label_guests:"Estimated Guests",form_placeholder_guests:"Min. 20 guests",
+        form_label_cuisine:"Cuisine Preference",form_cuisine_placeholder:"Select option",
+        form_cuisine_veg:"Pure Vegetarian Feast",form_cuisine_nonveg:"Non-Vegetarian Delights",
+        form_cuisine_both:"Both (Veg & Non-Veg)",form_label_details:"Event Details & Special Requests",
+        form_placeholder_details:"Tell us about your event (e.g. Wedding, Corporate lunch...)",
+        form_submit_btn:"Submit Booking Request",modal_title:"Inquiry Submitted!",
+        modal_text:"Thank you for contacting Vijayadeva Catering. We will reach out within 24 hours.",
+        modal_close_btn:"Close Window",footer_brand_desc:"Premium catering services since 1996.",
+        footer_brand_badge:"Guided by Chief Chef Legacy",footer_title_links:"Quick Links",
+        footer_title_hours:"Operating Hours",footer_hours_item1_day:"Monday - Saturday",
+        footer_hours_item1_time:"09:00 AM - 08:00 PM",footer_hours_item2_day:"Sunday",
+        footer_hours_item2_time:"10:00 AM - 05:00 PM",footer_hours_item3_day:"Events Booking",
+        footer_hours_item3_time:"24/7 Availability",
+        footer_copyright:"© 2026 Vijayadeva Catering. All rights reserved.",
+        footer_credits_text:"Designed with honor for our Chief Chef | Powered by"
+      },
+      ta: {
+        logo_sub:"கேட்டரிங் சர்வீஸ்",nav_home:"முகப்பு",nav_legacy:"பாரம்பரியம்",
+        nav_services:"சேவைகள்",nav_menu:"உணவுப் பட்டியல்",nav_gallery:"புகைப்படங்கள்",
+        nav_reviews:"மதிப்புரைகள்",nav_book:"முன்பதிவு செய்ய",
+        hero_tagline:"பாரம்பரிய சுவை, என்றும் அழியா நினைவுகள்",
+        hero_title:"சுவைகளின் சங்கமம், பரிபூரண தயாரிப்பு",
+        hero_desc:"எங்கள் புகழ்பெற்ற சீஃப் செஃப் தயாரிக்கும் அரச விருந்து. 30 வருட பாரம்பரிய சைவ & அசைவ சமையல் அனுபவம்.",
+        hero_btn_menu:"எங்கள் உணவுகள்",hero_btn_quote:"விவரம் கேட்க",
+        about_badge_label:"வருட சமையல் அனுபவம்",about_subtitle:"எங்கள் பாரம்பரியம்",
+        about_title:"சமையல் கலையில் வாழ்நாள் அர்ப்பணிப்பு",
+        about_chef_title:"சீஃப் செஃப் விஜயதேவா அவர்களின் கைவண்ணம்",
+        about_text_1:"நாங்கள் பரிமாறும் ஒவ்வொரு உணவிலும் ஒரு அர்ப்பணிப்பு கதை உள்ளது. எனது தந்தை சீஃப் செஃப் விஜயதேவா அவர்களால் தொடங்கப்பட்ட எங்கள் நிறுவனம் நிகரற்ற சுவை மற்றும் விருந்தோம்பலை வழங்குகிறது.",
+        about_text_2:"பாரம்பரிய சைவ விருந்தாக இருந்தாலும் அல்லது நறுமணமிக்க அசைவ விருந்தாக இருந்தாலும், அவரின் நேரடி மேற்பார்வையே சுவைக்கு உத்தரவாதம்.",
+        about_h1_title:"கை அரைத்த மசாலாக்கள்",about_h1_desc:"சுவையும் நறுமணமும் மாறாமல் இருக்க அனைத்து மசாலாக்களையும் நாங்களே அரைக்கிறோம்.",
+        about_h2_title:"சுத்தமான தரம்",about_h2_desc:"கடுமையான தரக் கட்டுப்பாடுகள், புதிய உள்ளூர் பொருட்கள் மற்றும் சுத்திகரிக்கப்பட்ட சமையலறை.",
+        services_subtitle:"எங்கள் சேவைகள்",services_title:"அனைத்து சுபநிகழ்ச்சிகளுக்கும் கேட்டரிங்",
+        service1_title:"பிரமாண்ட திருமணங்கள்",service1_desc:"வரவேற்பு பானங்கள் முதல் இனிப்பு வகைகள் வரை முழு திருமண விருந்து.",
+        service2_title:"கார்ப்பரேட் விழாக்கள்",service2_desc:"பஃபே, தேநீர் விருந்து மற்றும் உங்கள் குழுவினருக்கான மதிய உணவு.",
+        service3_title:"குடும்ப சுபநிகழ்ச்சிகள்",service3_desc:"பிறந்தநாள், திருமண நாள், புதுமனை புகுவிழா போன்ற இல்ல விழாக்கள்.",
+        service4_title:"பாரம்பரிய பண்டிகை விருந்துகள்",service4_desc:"மத சடங்குகள் மற்றும் பண்பாட்டு விழாக்களுக்கு பாரம்பரிய உணவுகள்.",
+        menu_subtitle:"சுவையான உணவுகள்",menu_title:"எங்கள் சிறப்பு உணவுகள்",
+        menu_filter_all:"அனைத்து உணவுகள்",menu_filter_veg:"சுத்தமான சைவம்",menu_filter_nonveg:"அசைவ உணவுகள்",
+        menu_item1_tag:"சைவ சிறப்பு",menu_item1_title:"அரச சைவ விருந்து",
+        menu_item1_desc:"பனீர் பட்டர் மசாலா, குங்குமப்பூ புலாவ், தால் மக்கானி, நான் மற்றும் ராய்தா அடங்கிய தாலி.",
+        menu_item1_feat1:"மதிய/இரவு உணவு",menu_item1_feat2:"குறைந்த காரம்",
+        menu_item2_tag:"சீஃப் செஃப் சிறப்பு",menu_item2_title:"விஜயதேவா மட்டன் பிரியாணி",
+        menu_item2_desc:"சுவையான பாசுமதி அரிசி, தரமான ஆட்டுக்கறி மற்றும் பிரத்தியேக மசாலா கூட்டில் உருவான பிரியாணி.",
+        menu_item2_feat1:"முக்கிய உணவு",menu_item2_feat2:"நடுத்தர காரம்",
+        menu_item3_tag:"சைவம்",menu_item3_title:"சாஹி பனீர் டிக்கா",
+        menu_item3_desc:"தயிர் மற்றும் மசாலாக்களில் ஊறவைக்கப்பட்டு தந்தூரி அடுப்பில் சுடப்பட்ட பனீர் துண்டுகள்.",
+        menu_item3_feat1:"ஸ்டார்டர்ஸ்",menu_item3_feat2:"நடுத்தர காரம்",
+        menu_item4_tag:"சிக்கன்",menu_item4_title:"விஜயதேவா மிளகு சிக்கன்",
+        menu_item4_desc:"புதிதாக அரைத்த கறுப்பு மிளகு, தேங்காய் எண்ணெய், கறிவேப்பிலை மற்றும் சீஃப் செஃப்பின் பிரத்தியேக மசாலாவில் வதக்கிய மென்மையான சிக்கன் துண்டுகள்.",
+        menu_item4_feat1:"முக்கிய உணவு",menu_item4_feat2:"காரமான மிளகு சுவை",
+        gallery_subtitle:"காட்சி விருந்து",gallery_title:"எங்கள் புகைப்படத் தொகுப்பு",
+        gallery_item1_title:"பாரம்பரிய தாலி அலங்காரம்",gallery_item1_desc:"சைவ கேட்டரிங்",
+        gallery_item2_title:"பிரமாண்ட திருமண மேஜை அமைப்பு",gallery_item2_desc:"மங்களகரமான திருமணங்கள்",
+        gallery_item3_title:"மண்பானை பிரியாணி காட்சி",gallery_item3_desc:"சீஃப் செஃப் சிறப்பு",
+        gallery_item4_title:"பாரம்பரிய மசாலா தோசை",gallery_item4_desc:"சைவ சிறப்பு வகைகள்",
+        gallery_item5_title:"மொறுமொறுப்பான சமோசா",gallery_item5_desc:"சுவையான சைவ தின்பண்டங்கள்",
+        gallery_item6_title:"பிரீமியம் கடாய் பனீர்",gallery_item6_desc:"சைவ முக்கிய உணவு",
+        testimonials_subtitle:"மனமார்ந்த பாராட்டுக்கள்",testimonials_title:"வாடிக்கையாளர்களின் கருத்துக்கள்",
+        testimonial1_text:'"விஜயதேவா கேட்டரிங் எனது மகளின் திருமண உணவுகளை கவனித்தனர். மட்டன் பிரியாணி அசாத்தியமாக இருந்தது!"',
+        testimonial1_name:"கார்த்திக் சீனிவாசன்",testimonial1_event:"திருமண விருந்து, சென்னை",
+        testimonial2_text:'"எங்கள் நிறுவன விழாவிற்கு சைவ உணவுகளைத் தேர்ந்தெடுத்தோம். பனீர் பட்டர் மசாலா அருமையாக இருந்தது."',
+        testimonial2_name:"பூஜா சர்மா",testimonial2_event:"கார்ப்பரேட் விழா, டெக் பார்க்",
+        testimonial3_text:'"புதுமனை பூஜைக்கு இவர்களை அழைத்தோம். சைவ சமையல் மிகவும் தூய்மையாகவும் பக்திப்பூர்வமாகவும் இருந்தது."',
+        testimonial3_name:"ராமச்சந்திரன் ஐயர்",testimonial3_event:"புதுமனை புகுவிழா மதிய விருந்து",
+        contact_subtitle:"தொடர்பு கொள்ள",contact_title:"உணவுப் பயணத்தைத் திட்டமிடுங்கள்",
+        contact_desc:"உங்கள் விருந்தினர்களுக்கு மறக்க முடியாத உணவு அனுபவத்தை வழங்க தயாரா? எங்களை அழைக்கவும்.",
+        contact_office_title:"எங்கள் அலுவலகம்",contact_office_val:"விழுப்புரந்துரை, நாங்குடி போஸ்ட், ஸ்ரீமுஷ்ணம் தாலுகா, கடலூர் மாவட்டம்",
+        contact_phone_title:"நேரடி அழைப்புக்கு",contact_email_title:"மின்னஞ்சல் முகவரி",
+        form_title:"இலவச மதிப்பீடு பெற",form_label_name:"உங்கள் முழு பெயர்",
+        form_placeholder_name:"உ.ம். ராஜேஷ் குமார்",form_label_email:"மின்னஞ்சல் முகவரி",
+        form_placeholder_email:"உ.ம். rajesh@email.com",form_label_phone:"தொலைபேசி எண்",
+        form_placeholder_phone:"உ.ம். +91 98400 12345",form_label_date:"விழா நடைபெறும் நாள்",
+        form_label_guests:"வருகை தரும் விருந்தினர்கள்",form_placeholder_guests:"குறைந்தது 20 விருந்தினர்கள்",
+        form_label_cuisine:"உணவு விருப்பம்",form_cuisine_placeholder:"விருப்பத்தைத் தேர்ந்தெடுக்கவும்",
+        form_cuisine_veg:"சுத்தமான சைவ உணவு",form_cuisine_nonveg:"சுவையான அசைவ உணவு",
+        form_cuisine_both:"இரண்டும் (சைவம் & அசைவம்)",form_label_details:"விழா விவரங்கள் & இதர விருப்பங்கள்",
+        form_placeholder_details:"விழாவைப் பற்றி குறிப்பிடவும் (திருமணம், கார்ப்பரேட்...)",
+        form_submit_btn:"முன்பதிவு செய்ய அனுப்பவும்",modal_title:"விவரங்கள் அனுப்பப்பட்டது!",
+        modal_text:"விஜயதேவா கேட்டரிங்கைத் தொடர்பு கொண்டதற்கு நன்றி. 24 மணி நேரத்திற்குள் தொடர்பு கொள்வோம்.",
+        modal_close_btn:"சாளரத்தை மூடு",footer_brand_desc:"1996 முதல் பாரம்பரிய சுவை வழங்கும் பிரீமியம் கேட்டரிங் சேவை.",
+        footer_brand_badge:"சீஃப் செஃப் பாரம்பரிய வழிகாட்டுதலில்",footer_title_links:"விரைவு இணைப்புகள்",
+        footer_title_hours:"வேலை நேரம்",footer_hours_item1_day:"திங்கள் - சனி",
+        footer_hours_item1_time:"காலை 09:00 - இரவு 08:00",footer_hours_item2_day:"ஞாயிறு",
+        footer_hours_item2_time:"காலை 10:00 - மாலை 05:00",footer_hours_item3_day:"நிகழ்ச்சி முன்பதிவு",
+        footer_hours_item3_time:"24/7 சேவை",
+        footer_copyright:"© 2026 விஜயதேவா கேட்டரிங். அனைத்து உரிமைகளும் பாதுகாக்கப்பட்டவை.",
+        footer_credits_text:"சீஃப் செஃப் நினைவாக வடிவமைக்கப்பட்டது | தயாரிப்பு"
+      }
+    };
+
+    var currentLang = 'en';
+    try { currentLang = localStorage.getItem('lang') || 'en'; } catch(e){}
+
+    function applyLang(lang) {
+      currentLang = lang;
+      try { localStorage.setItem('lang', lang); } catch(e){}
+
+      // Update all buttons in both switchers
+      document.querySelectorAll('.lang-btn[data-lang]').forEach(function(btn) {
+        btn.classList.toggle('active', btn.getAttribute('data-lang') === lang);
+      });
+
+      // Translate all data-i18n elements
+      document.querySelectorAll('[data-i18n]').forEach(function(el) {
+        var key = el.getAttribute('data-i18n');
+        var val = translations[lang] && translations[lang][key];
+        if (!val) return;
+        var icon = el.querySelector('i');
+        if (icon) {
+          el.innerHTML = icon.outerHTML + ' ' + val;
+        } else {
+          el.textContent = val;
+        }
+      });
+
+      // Translate placeholders
+      document.querySelectorAll('[data-i18n-placeholder]').forEach(function(el) {
+        var key = el.getAttribute('data-i18n-placeholder');
+        var val = translations[lang] && translations[lang][key];
+        if (val) el.placeholder = val;
+      });
+    }
+
+    // Attach click to ALL lang-btn elements (both floating and nav)
+    document.addEventListener('click', function(e) {
+      var btn = e.target.closest('.lang-btn[data-lang]');
+      if (btn) {
+        e.preventDefault();
+        applyLang(btn.getAttribute('data-lang'));
+      }
+    });
+
+    // Apply saved language on load
+    applyLang(currentLang);
+
+    // ---- Pricing Tab Switcher ----
+    document.querySelectorAll(".pricing-tab-btn").forEach(function(btn) {
+      btn.addEventListener("click", function() {
+        document.querySelectorAll(".pricing-tab-btn").forEach(function(b){ b.classList.remove("active"); });
+        document.querySelectorAll(".pricing-table-wrap").forEach(function(t){ t.classList.remove("active"); });
+        btn.classList.add("active");
+        var target = document.getElementById(btn.getAttribute("data-tab"));
+        if (target) target.classList.add("active");
+      });
+    });
+
+  })();
+  </script>
+</body>
+</html>
