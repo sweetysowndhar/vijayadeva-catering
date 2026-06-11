@@ -1394,17 +1394,65 @@ footer {
 
 /* ===== MOBILE RESPONSIVE FIXES (max-width: 480px) ===== */
 @media (max-width: 480px) {
-  /* Pricing table mobile */
+  /* === PRICING TABLE → CARD LAYOUT === */
   .pricing-section { padding: 4rem 1rem; }
   .pricing-tabs { gap: 0.5rem; }
   .pricing-tab-btn { padding: 0.6rem 1rem; font-size: 0.82rem; }
-  .pricing-table { min-width: 320px; }
-  .pricing-table th { padding: 0.8rem 0.6rem; font-size: 0.78rem; }
-  .pricing-table th small { font-size: 0.62rem; }
-  .pricing-row td { padding: 0.8rem 0.6rem; font-size: 0.85rem; }
-  .guest-badge { padding: 0.3rem 0.6rem; font-size: 0.72rem; white-space: nowrap; }
-  .price-tag { font-size: 0.95rem; }
-  .pricing-legend { gap: 1rem; flex-direction: column; align-items: flex-start; padding: 0 1rem; }
+
+  /* Hide table header on mobile */
+  .pricing-table thead { display: none; }
+
+  /* Make table, tbody, tr, td behave as block elements */
+  .pricing-table,
+  .pricing-table tbody,
+  .pricing-table tr,
+  .pricing-table td { display: block; width: 100%; }
+
+  /* Each row becomes a styled card */
+  .pricing-table tbody tr.pricing-row {
+    margin-bottom: 1rem;
+    border-radius: 12px;
+    border: 1px solid rgba(197,168,128,0.2);
+    overflow: hidden;
+    background: var(--card-bg);
+  }
+  .pricing-table tbody tr.pricing-row.highlight {
+    border-color: var(--primary);
+    box-shadow: 0 0 20px rgba(197,168,128,0.15);
+  }
+
+  /* Each cell shows its label on the left, value on the right */
+  .pricing-table td {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.8rem 1rem;
+    border-bottom: 1px solid rgba(197,168,128,0.08);
+    font-size: 0.9rem;
+  }
+  .pricing-table td:last-child { border-bottom: none; }
+
+  /* Show column name as label before each value */
+  .pricing-table td::before {
+    content: attr(data-label);
+    font-size: 0.75rem;
+    color: var(--text-muted);
+    font-weight: 500;
+    text-align: left;
+    flex: 1;
+  }
+
+  /* Remove container overflow (no longer needed) */
+  .pricing-table-container {
+    overflow-x: visible;
+    border: none;
+    box-shadow: none;
+    background: transparent;
+  }
+
+  .guest-badge { font-size: 0.8rem; padding: 0.3rem 0.8rem; }
+  .price-tag { font-size: 1rem; }
+  .pricing-legend { gap: 0.75rem; flex-direction: column; align-items: flex-start; }
 
   /* Hero mobile */
   .hero-title { font-size: 2.2rem; line-height: 1.2; }
@@ -1414,7 +1462,6 @@ footer {
 
   /* Section titles */
   .section-title { font-size: 1.8rem; }
-  .section-subtitle { font-size: 0.8rem; }
 
   /* Menu cards */
   .menu-grid { grid-template-columns: 1fr; gap: 1.5rem; }
@@ -1458,6 +1505,7 @@ footer {
   .menu-grid { grid-template-columns: 1fr; }
   .gallery-grid { grid-template-columns: 1fr 1fr; }
 }
+
 
 
 /* Floating WhatsApp Button */
