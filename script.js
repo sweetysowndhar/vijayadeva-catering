@@ -138,7 +138,8 @@ document.addEventListener('DOMContentLoaded', () => {
       footer_hours_item3_day: "Events Booking",
       footer_hours_item3_time: "24/7 Availability",
       footer_copyright: "© 2026 Vijayadeva Catering. All rights reserved.",
-      footer_credits_text: "Designed with honor for our Chief Chef | Powered by"
+      footer_credits_text: "Designed with honor for our Chief Chef | Powered by",
+      nav_visiting_card: "Digital Business Card"
     },
     ta: {
       logo_sub: "கேட்டரிங் சர்வீஸ்",
@@ -277,7 +278,8 @@ document.addEventListener('DOMContentLoaded', () => {
       footer_hours_item3_day: "நிகழ்ச்சி முன்பதிவு",
       footer_hours_item3_time: "24/7 சேவை",
       footer_copyright: "© 2026 விஜயதேவா கேட்டரிங். அனைத்து உரிமைகளும் பாதுகாக்கப்பட்டவை.",
-      footer_credits_text: "சீஃப் செஃப் நினைவாக வடிவமைக்கப்பட்டது | தயாரிப்பு"
+      footer_credits_text: "சீஃப் செஃப் நினைவாக வடிவமைக்கப்பட்டது | தயாரிப்பு",
+      nav_visiting_card: "டிஜிட்டல் விசிட்டிங் கார்டு"
     }
   };
 
