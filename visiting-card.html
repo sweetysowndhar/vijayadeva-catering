@@ -14,7 +14,7 @@
     <style>
         :root {
             --bg-color: #0b0c10;
-            --card-bg: rgba(26, 26, 29, 0.85);
+            --card-bg: rgba(26, 26, 29, 0.9);
             --gold-light: #f3e5ab;
             --gold: #d4af37;
             --gold-dark: #aa7c11;
@@ -79,7 +79,7 @@
 
         header {
             text-align: center;
-            margin-bottom: 30px;
+            margin-bottom: 15px;
             animation: fadeInDown 0.8s ease-out;
         }
 
@@ -98,6 +98,35 @@
             color: var(--text-muted);
             font-size: 0.95rem;
             letter-spacing: 1px;
+        }
+
+        /* Language Toggle Switcher */
+        .lang-toggle-container {
+            display: flex;
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(212, 175, 55, 0.25);
+            border-radius: 20px;
+            padding: 3px;
+            margin-bottom: 25px;
+            z-index: 10;
+            animation: fadeInDown 0.8s ease-out;
+        }
+
+        .lang-toggle-btn {
+            background: transparent;
+            border: none;
+            color: var(--text-muted);
+            padding: 6px 16px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            border-radius: 17px;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+
+        .lang-toggle-btn.active {
+            background: linear-gradient(135deg, var(--gold) 0%, var(--gold-dark) 100%);
+            color: #0b0c10;
         }
 
         /* 3D Card Flip Structure */
@@ -131,7 +160,7 @@
             -webkit-backface-visibility: hidden;
             backface-visibility: hidden;
             border-radius: 20px;
-            padding: 25px;
+            padding: 22px 25px;
             display: flex;
             flex-direction: column;
             justify-content: space-between;
@@ -171,23 +200,23 @@
         .card-front {
             align-items: center;
             justify-content: center;
-            gap: 15px;
+            gap: 12px;
         }
 
         .card-front .logo-container {
-            width: 80px;
-            height: 80px;
+            width: 75px;
+            height: 75px;
             display: flex;
             align-items: center;
             justify-content: center;
             background: radial-gradient(circle, rgba(212,175,55,0.15) 0%, transparent 70%);
             border-radius: 50%;
-            margin-bottom: 5px;
+            margin-bottom: 2px;
         }
 
         .card-front .logo-svg {
-            width: 55px;
-            height: 55px;
+            width: 50px;
+            height: 50px;
             fill: var(--gold);
             filter: drop-shadow(0 2px 5px rgba(212, 175, 55, 0.3));
         }
@@ -205,7 +234,7 @@
             width: 80px;
             height: 1.5px;
             background: linear-gradient(90deg, transparent, var(--gold), transparent);
-            margin: 5px 0;
+            margin: 2px 0;
         }
 
         .card-front p.tagline {
@@ -219,7 +248,7 @@
             font-size: 0.8rem;
             color: var(--gold-light);
             letter-spacing: 0.5px;
-            opacity: 0.8;
+            opacity: 0.85;
             margin-top: -2px;
         }
 
@@ -239,7 +268,7 @@
             animation: bounce 1.5s infinite;
         }
 
-        /* Back Face */
+        /* Back Face Details */
         .card-back {
             transform: rotateY(180deg);
             text-align: left;
@@ -251,46 +280,85 @@
             justify-content: space-between;
             align-items: flex-start;
             border-bottom: 1px solid rgba(212, 175, 55, 0.15);
-            padding-bottom: 10px;
+            padding-bottom: 8px;
         }
 
         .chef-title h3 {
             font-family: 'Cormorant Garamond', serif;
-            font-size: 1.4rem;
+            font-size: 1.35rem;
             font-weight: 700;
             color: var(--gold);
             letter-spacing: 0.5px;
         }
 
         .chef-title p.role {
-            font-size: 0.75rem;
+            font-size: 0.72rem;
             color: var(--text-muted);
             text-transform: uppercase;
-            letter-spacing: 1px;
-            margin-top: 2px;
+            letter-spacing: 0.8px;
+            margin-top: 1px;
         }
 
         .card-back-logo-svg {
-            width: 30px;
-            height: 30px;
+            width: 26px;
+            height: 26px;
             fill: var(--gold);
             opacity: 0.8;
         }
 
-        .card-details {
-            margin: 15px 0;
+        .card-back-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin: 12px 0;
+            gap: 15px;
+        }
+
+        .card-back-info {
             display: flex;
             flex-direction: column;
-            gap: 12px;
+            gap: 8px;
+            flex-grow: 1;
+        }
+
+        .card-back-qr {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            gap: 4px;
+            background: rgba(255, 255, 255, 0.04);
+            padding: 6px;
+            border-radius: 10px;
+            border: 1px solid rgba(212, 175, 55, 0.15);
+            flex-shrink: 0;
+            width: 90px;
+        }
+
+        .qr-tiny-svg {
+            background: white;
+            padding: 4px;
+            border-radius: 4px;
+            width: 72px;
+            height: 72px;
+            display: block;
+        }
+
+        .qr-label {
+            font-size: 0.58rem;
+            color: var(--gold-light);
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            font-weight: 500;
         }
 
         .detail-item {
             display: flex;
             align-items: center;
-            gap: 12px;
+            gap: 10px;
             text-decoration: none;
             color: var(--text-light);
-            font-size: 0.85rem;
+            font-size: 0.8rem;
             transition: color 0.3s;
         }
 
@@ -299,16 +367,16 @@
         }
 
         .detail-icon-box {
-            width: 26px;
-            height: 26px;
-            border-radius: 6px;
-            background: rgba(212, 175, 55, 0.1);
+            width: 24px;
+            height: 24px;
+            border-radius: 5px;
+            background: rgba(212, 175, 55, 0.15);
             border: 1px solid rgba(212, 175, 55, 0.2);
             display: flex;
             align-items: center;
             justify-content: center;
             color: var(--gold);
-            font-size: 0.8rem;
+            font-size: 0.75rem;
             flex-shrink: 0;
             transition: all 0.3s;
         }
@@ -329,16 +397,20 @@
             display: flex;
             justify-content: space-between;
             align-items: center;
-            font-size: 0.7rem;
+            font-size: 0.68rem;
             color: var(--text-muted);
             border-top: 1px solid rgba(212, 175, 55, 0.15);
-            padding-top: 10px;
+            padding-top: 8px;
         }
 
         .card-back-footer .web-link {
             color: var(--gold-light);
             text-decoration: none;
             font-weight: 500;
+            max-width: 65%;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            white-space: nowrap;
         }
 
         /* Action Buttons Grid */
@@ -362,9 +434,9 @@
             align-items: center;
             justify-content: center;
             gap: 8px;
-            padding: 14px 20px;
+            padding: 13px 18px;
             border-radius: 12px;
-            font-size: 0.9rem;
+            font-size: 0.88rem;
             font-weight: 600;
             text-decoration: none;
             cursor: pointer;
@@ -554,22 +626,100 @@
             50% { transform: translateX(4px); }
         }
 
-        /* Card 3D tilt interaction setup */
-        .card-perspective {
-            transition: transform 0.1s ease;
-        }
+        /* PRINT STYLESHEET (PDF & Standard Visiting Card Dimensions) */
+        @media print {
+            @page {
+                size: A4 portrait;
+                margin: 15mm;
+            }
 
-        /* Small screen height fixes */
-        @media (max-height: 600px) {
             body {
-                padding: 10px;
-                justify-content: flex-start;
+                background: #ffffff !important;
+                background-image: none !important;
+                color: #000000 !important;
+                display: block !important;
+                padding: 0 !important;
+                margin: 0 !important;
+                min-height: auto !important;
             }
-            header {
-                margin-bottom: 15px;
+
+            /* Hide all UI elements except the card itself */
+            .orb, header, .lang-toggle-container, .action-container, .qr-section, .toast, .flip-hint, .qr-popup {
+                display: none !important;
             }
+
             .card-perspective {
-                margin-bottom: 20px;
+                perspective: none !important;
+                width: auto !important;
+                height: auto !important;
+                margin: 20mm auto !important;
+                cursor: default !important;
+                box-shadow: none !important;
+            }
+
+            .card-inner {
+                transform: none !important;
+                transform-style: flat !important;
+                display: flex !important;
+                flex-direction: column !important;
+                gap: 40px !important;
+                align-items: center !important;
+                justify-content: center !important;
+            }
+
+            /* Front and Back of the card displayed side-by-side or stacked at exact standard physical dimensions */
+            .card-face {
+                position: relative !important;
+                display: flex !important;
+                /* Standard Business Card Size: 3.5 inches x 2.0 inches (88.9mm x 50.8mm) */
+                width: 3.5in !important;
+                height: 2.0in !important;
+                padding: 15px 20px !important;
+                border-radius: 0 !important; /* Sharp corners for printing/cutting */
+                border: 1.5px solid #d4af37 !important; /* Gold border line for cutting boundary */
+                box-shadow: none !important;
+                background-color: #1a1a1d !important; /* Retain rich dark gold luxury design during print */
+                color: #ffffff !important;
+                transform: none !important;
+                page-break-inside: avoid !important;
+            }
+
+            .card-front {
+                justify-content: center !important;
+                align-items: center !important;
+            }
+
+            .card-back {
+                transform: none !important;
+                justify-content: space-between !important;
+            }
+
+            /* Keep colors legible */
+            .chef-title h3, .card-front h2, .logo-svg, .card-back-logo-svg {
+                color: #d4af37 !important;
+                fill: #d4af37 !important;
+            }
+
+            .detail-icon-box {
+                background: rgba(212, 175, 55, 0.15) !important;
+                color: #d4af37 !important;
+                border: 1px solid #d4af37 !important;
+                -webkit-print-color-adjust: exact;
+                print-color-adjust: exact;
+            }
+
+            .qr-tiny-svg {
+                border: 1px solid #d4af37 !important;
+            }
+
+            .card-back-footer .web-link {
+                color: #f3e5ab !important;
+            }
+
+            /* Make sure colors render correctly in print */
+            * {
+                -webkit-print-color-adjust: exact !important;
+                print-color-adjust: exact !important;
             }
         }
     </style>
@@ -581,9 +731,15 @@
     <div class="orb orb-2"></div>
 
     <header>
-        <h1>Vijayadeva Catering</h1>
-        <p>Dynamic Business Card • டிஜிட்டல் விசிட்டிங் கார்டு</p>
+        <h1 data-i18n="header_title">Vijayadeva Catering</h1>
+        <p data-i18n="header_subtitle">Dynamic Business Card • டிஜிட்டல் விசிட்டிங் கார்டு</p>
     </header>
+
+    <!-- Dynamic Language Selector for Visiting Card itself -->
+    <div class="lang-toggle-container">
+        <button class="lang-toggle-btn active" onclick="setCardLanguage('en')">English</button>
+        <button class="lang-toggle-btn" onclick="setCardLanguage('ta')">தமிழ்</button>
+    </div>
 
     <!-- 3D Flippable Business Card Container -->
     <div class="card-perspective" id="cardContainer" onclick="flipCard(event)">
@@ -594,24 +750,20 @@
                 <div class="logo-container">
                     <!-- Elegant Culinary Logo Emblem -->
                     <svg class="logo-svg" viewBox="0 0 100 100">
-                        <!-- Traditional Cooking Pot / Brass Urn Motif & Chef Crown -->
                         <path d="M50 15 C45 15, 42 22, 42 25 C45 28, 55 28, 58 25 C58 22, 55 15, 50 15 Z" />
                         <path d="M30 40 C30 32, 70 32, 70 40 L73 45 C75 52, 72 75, 50 78 C28 75, 25 52, 27 45 Z" />
                         <!-- Decorative Handles -->
                         <path d="M28 48 C20 48, 20 60, 27 60" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round"/>
                         <path d="M72 48 C80 48, 80 60, 73 60" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round"/>
-                        <!-- Decorative Lines -->
-                        <path d="M33 46 Q50 50 67 46" fill="none" stroke="#0b0c10" stroke-width="2" opacity="0.6"/>
-                        <path d="M37 56 Q50 61 63 56" fill="none" stroke="currentColor" stroke-width="1.5" opacity="0.8"/>
                     </svg>
                 </div>
-                <h2>VIJAYADEVA</h2>
+                <h2 data-i18n="front_title">VIJAYADEVA</h2>
                 <div class="divider"></div>
-                <p class="tagline">Premium Catering Services</p>
-                <p class="tamil-tagline">பிரீமியம் கேட்டரிங் சர்வீஸ்</p>
+                <p class="tagline" data-i18n="front_tagline">Premium Catering Services</p>
+                <p class="tamil-tagline" data-i18n="front_tamil_tagline">பிரீமியம் கேட்டரிங் சர்வீஸ்</p>
                 
                 <div class="flip-hint">
-                    <span>Tap Card to Flip</span> <i class="fa-solid fa-arrow-right-rotate"></i>
+                    <span data-i18n="hint_text">Tap Card to Flip</span> <i class="fa-solid fa-arrow-right-rotate"></i>
                 </div>
             </div>
 
@@ -619,8 +771,8 @@
             <div class="card-face card-back">
                 <div class="card-back-header">
                     <div class="chef-title">
-                        <h3>Vijayadeva Catering</h3>
-                        <p class="role">Traditional & Modern Feast Specialists</p>
+                        <h3 data-i18n="card_title">Vijayadeva Catering</h3>
+                        <p class="role" data-i18n="card_role">Traditional & Modern Feast Specialists</p>
                     </div>
                     <!-- Small header logo -->
                     <svg class="card-back-logo-svg" viewBox="0 0 100 100">
@@ -629,35 +781,46 @@
                     </svg>
                 </div>
 
-                <div class="card-details">
-                    <!-- Call Link -->
-                    <a href="tel:+919344536941" class="detail-item" onclick="stopPropagation(event)">
-                        <div class="detail-icon-box">
-                            <i class="fa-solid fa-phone"></i>
-                        </div>
-                        <span>+91 93445 36941</span>
-                    </a>
-                    
-                    <!-- WhatsApp Link -->
-                    <a href="https://wa.me/919344536941" target="_blank" class="detail-item whatsapp-item" onclick="stopPropagation(event)">
-                        <div class="detail-icon-box">
-                            <i class="fa-brands fa-whatsapp"></i>
-                        </div>
-                        <span>WhatsApp Chat (Direct)</span>
-                    </a>
+                <div class="card-back-content">
+                    <div class="card-back-info">
+                        <!-- Call Link -->
+                        <a href="tel:+919344536941" class="detail-item" onclick="stopPropagation(event)">
+                            <div class="detail-icon-box">
+                                <i class="fa-solid fa-phone"></i>
+                            </div>
+                            <span>+91 93445 36941</span>
+                        </a>
+                        
+                        <!-- WhatsApp Link -->
+                        <a href="https://wa.me/919344536941" target="_blank" class="detail-item whatsapp-item" onclick="stopPropagation(event)">
+                            <div class="detail-icon-box">
+                                <i class="fa-brands fa-whatsapp"></i>
+                            </div>
+                            <span data-i18n="card_whatsapp">WhatsApp Chat</span>
+                        </a>
 
-                    <!-- Location Link -->
-                    <a href="https://maps.google.com/?q=Tamil+Nadu,+India" target="_blank" class="detail-item" onclick="stopPropagation(event)">
-                        <div class="detail-icon-box">
-                            <i class="fa-solid fa-location-dot"></i>
-                        </div>
-                        <span>Tamil Nadu, India</span>
-                    </a>
+                        <!-- Location Link -->
+                        <a href="https://maps.google.com/?q=Tamil+Nadu,+India" target="_blank" class="detail-item" onclick="stopPropagation(event)">
+                            <div class="detail-icon-box">
+                                <i class="fa-solid fa-location-dot"></i>
+                            </div>
+                            <span data-i18n="card_location">Tamil Nadu, India</span>
+                        </a>
+                    </div>
+
+                    <!-- Tiny scan menu QR code directly on back of card -->
+                    <div class="card-back-qr">
+                        <svg class="qr-tiny-svg" viewBox="0 0 29 29" shape-rendering="crispEdges">
+                            <path fill="#ffffff" d="M0 0h29v29H0z"/>
+                            <path fill="#0b0c10" d="M0 0h7v7H0zm22 0h7v7h-7zM0 22h7v7H0zm9 0h1v2h-1zm2 0h1v1h-1zm2 0h1v2h-1zm1 2h1v1h-1zm3-2h2v1h-2zm4 0h1v1h-1zm2 0h1v1h-1zm-6 2h1v1h-1zm2 0h1v1h-1zm4 0h1v1h-1zm2 0h1v1h-1zM2 2h3v3H2zm20 0h3v3h-3zM2 24h3v3H2zM9 0h1v1H9zm2 0h1v3h-1zm1 4h1v1h-1zm-1-2h1v1h-1zm3-2h3v1h-3zm1 2h1v1h-1zm2 0h1v1h-1zm2-2h1v1h-1zm1 2h1v2h-1zm2-2h1v1h-1zm-3 4h1v1h-1zm3 0h1v1h-1zM9 9h1v1H9zm1 1h1v1h-1zm-2 2h2v1H8zm3-1h1v1h-1zm2-2h3v1h-3zm1 3h2v1h-2zm3-3h1v1h-1zm1 2h1v1h-1zm1-2h2v1h-2zm3 0h1v1h-1zm1 1h1v1h-1zm-1 2h1v1h-1zm-7 2h1v2h-1zm3-1h1v1h-1zm-1 2h1v1h-1zm2-2h1v1h-1zm1 2h2v1h-2zm4-2h1v1h-1zm-1 2h1v1h-1zm-15 4h1v2H9zm1 1h2v1h-2zm3-1h1v1h-1zm1 1h2v1h-2zm3-1h1v1h-1zm2-1h1v1h-1zm-1 2h1v1h-1zm4-2h1v1h-1zm1 2h1v1h-1zm2-2h1v1h-1z"/>
+                        </svg>
+                        <span class="qr-label" data-i18n="card_scan">Scan Menu</span>
+                    </div>
                 </div>
 
                 <div class="card-back-footer">
-                    <span>Scan for Menu / Tap to Flip</span>
-                    <a href="index.html" class="web-link" onclick="stopPropagation(event)">vijayadevacatering.com</a>
+                    <span data-i18n="card_footer_hint">Tap to Flip Card</span>
+                    <a href="https://sweetysowndhar.github.io/vijayadeva-catering/" target="_blank" class="web-link" onclick="stopPropagation(event)">sweetysowndhar.github.io/vijayadeva-catering</a>
                 </div>
             </div>
 
@@ -668,39 +831,44 @@
     <div class="action-container">
         
         <!-- WhatsApp Call Action -->
-        <a href="https://wa.me/919344536941" target="_blank" class="btn btn-whatsapp">
-            <i class="fa-brands fa-whatsapp"></i> Chat on WhatsApp
+        <a href="https://wa.me/919344536941" target="_blank" class="btn btn-whatsapp" id="btnChat">
+            <i class="fa-brands fa-whatsapp"></i> <span data-i18n="btn_chat">Chat on WhatsApp</span>
         </a>
 
         <div class="btn-row">
             <!-- Add to Contact Button -->
             <button class="btn btn-primary" onclick="downloadVCard()">
-                <i class="fa-solid fa-user-plus"></i> Save Contact
+                <i class="fa-solid fa-user-plus"></i> <span data-i18n="btn_save">Save Contact</span>
             </button>
             
             <!-- Call Button -->
             <a href="tel:+919344536941" class="btn btn-secondary">
-                <i class="fa-solid fa-phone"></i> Call Chef
+                <i class="fa-solid fa-phone"></i> <span data-i18n="btn_call">Call Chef</span>
             </a>
         </div>
 
         <div class="btn-row">
             <!-- Website Button -->
             <a href="index.html" class="btn btn-secondary">
-                <i class="fa-solid fa-globe"></i> View Website
+                <i class="fa-solid fa-globe"></i> <span data-i18n="btn_web">View Website</span>
             </a>
             
-            <!-- Share Button -->
-            <button class="btn btn-secondary" onclick="shareCard()">
-                <i class="fa-solid fa-share-nodes"></i> Share Card
+            <!-- Save PDF / Print Button -->
+            <button class="btn btn-secondary" onclick="window.print()">
+                <i class="fa-solid fa-print"></i> <span data-i18n="btn_print">Save PDF / Print</span>
             </button>
         </div>
+
+        <!-- Share Button -->
+        <button class="btn btn-secondary" onclick="shareCard()" style="width: 100%;">
+            <i class="fa-solid fa-share-nodes"></i> <span data-i18n="btn_share">Share Card</span>
+        </button>
     </div>
 
     <!-- QR Code Section -->
     <div class="qr-section">
         <button class="qr-btn" onclick="toggleQR()">
-            <i class="fa-solid fa-qrcode"></i> Show QR Code for Menu
+            <i class="fa-solid fa-qrcode"></i> <span id="qrBtnText" data-i18n="show_qr_text">Show QR Code for Menu</span>
         </button>
     </div>
 
@@ -716,7 +884,7 @@
                 <path fill="#0b0c10" d="M0 0h7v7H0zm22 0h7v7h-7zM0 22h7v7H0zm9 0h1v2h-1zm2 0h1v1h-1zm2 0h1v2h-1zm1 2h1v1h-1zm3-2h2v1h-2zm4 0h1v1h-1zm2 0h1v1h-1zm-6 2h1v1h-1zm2 0h1v1h-1zm4 0h1v1h-1zm2 0h1v1h-1zM2 2h3v3H2zm20 0h3v3h-3zM2 24h3v3H2zM9 0h1v1H9zm2 0h1v3h-1zm1 4h1v1h-1zm-1-2h1v1h-1zm3-2h3v1h-3zm1 2h1v1h-1zm2 0h1v1h-1zm2-2h1v1h-1zm1 2h1v2h-1zm2-2h1v1h-1zm-3 4h1v1h-1zm3 0h1v1h-1zM9 9h1v1H9zm1 1h1v1h-1zm-2 2h2v1H8zm3-1h1v1h-1zm2-2h3v1h-3zm1 3h2v1h-2zm3-3h1v1h-1zm1 2h1v1h-1zm1-2h2v1h-2zm3 0h1v1h-1zm1 1h1v1h-1zm-1 2h1v1h-1zm-7 2h1v2h-1zm3-1h1v1h-1zm-1 2h1v1h-1zm2-2h1v1h-1zm1 2h2v1h-2zm4-2h1v1h-1zm-1 2h1v1h-1zm-15 4h1v2H9zm1 1h2v1h-2zm3-1h1v1h-1zm1 1h2v1h-2zm3-1h1v1h-1zm2-1h1v1h-1zm-1 2h1v1h-1zm4-2h1v1h-1zm1 2h1v1h-1zm2-2h1v1h-1z"/>
             </svg>
 
-            <p class="web-link">vijayadevacatering.com</p>
+            <p class="web-link">sweetysowndhar.github.io/vijayadeva-catering</p>
             <button class="close-qr" onclick="toggleQR()">Close</button>
         </div>
     </div>
@@ -736,6 +904,70 @@
         // Prevent click events on links/buttons on back of card from double-flipping the card
         function stopPropagation(event) {
             event.stopPropagation();
+        }
+
+        // Language Translation Dictionary
+        const cardTranslations = {
+            en: {
+                header_title: "Vijayadeva Catering",
+                header_subtitle: "Dynamic Business Card • டிஜிட்டல் விசிட்டிங் கார்டு",
+                front_title: "VIJAYADEVA",
+                front_tagline: "Premium Catering Services",
+                front_tamil_tagline: "பிரீமியம் கேட்டரிங் சர்வீஸ்",
+                hint_text: "Tap Card to Flip",
+                card_title: "Vijayadeva Catering",
+                card_role: "Traditional & Modern Feast Specialists",
+                card_whatsapp: "WhatsApp Chat",
+                card_location: "Tamil Nadu, India",
+                card_scan: "Scan Menu",
+                card_footer_hint: "Tap to Flip Card",
+                btn_chat: "Chat on WhatsApp",
+                btn_save: "Save Contact",
+                btn_call: "Call Chef",
+                btn_web: "View Website",
+                btn_print: "Save PDF / Print",
+                btn_share: "Share Card",
+                show_qr_text: "Show QR Code for Menu"
+            },
+            ta: {
+                header_title: "விஜயதேவா கேட்டரிங்",
+                header_subtitle: "டிஜிட்டல் விசிட்டிங் கார்டு • Digital Business Card",
+                front_title: "விஜயதேவா",
+                front_tagline: "பிரீமியம் கேட்டரிங் சர்வீஸ்",
+                front_tamil_tagline: "Premium Catering Services",
+                hint_text: "திருப்ப தட்டவும்",
+                card_title: "விஜயதேவா கேட்டரிங்",
+                card_role: "பாரம்பரிய & நவீன உணவு வல்லுநர்கள்",
+                card_whatsapp: "வாட்ஸ்அப் சாட் (நேரடி)",
+                card_location: "தமிழ்நாடு, இந்தியா",
+                card_scan: "மெனுவைப் பார்க்க",
+                card_footer_hint: "திருப்ப தட்டவும்",
+                btn_chat: "வாட்ஸ்அப்பில் பேச",
+                btn_save: "தொடர்பைச் சேமிக்க",
+                btn_call: "அழைக்க",
+                btn_web: "இணையதளம் பார்க்க",
+                btn_print: "PDF ஆகச் சேமி / அச்சிடு",
+                btn_share: "பகிர்க",
+                show_qr_text: "வலைத்தள QR குறியீடு"
+            }
+        };
+
+        function setCardLanguage(lang) {
+            // Update active state of language buttons
+            const buttons = document.querySelectorAll('.lang-toggle-btn');
+            buttons.forEach(btn => {
+                btn.classList.remove('active');
+                if (btn.textContent.trim().toLowerCase() === 'english' && lang === 'en') btn.classList.add('active');
+                if (btn.textContent.trim() === 'தமிழ்' && lang === 'ta') btn.classList.add('active');
+            });
+
+            // Translate elements
+            document.querySelectorAll('[data-i18n]').forEach(el => {
+                const key = el.getAttribute('data-i18n');
+                if (cardTranslations[lang] && cardTranslations[lang][key]) {
+                    el.textContent = cardTranslations[lang][key];
+                }
+            });
         }
 
         // Dynamic vCard (.vcf) Generator and Downloader
@@ -828,13 +1060,12 @@
             }
             
             const rect = cardContainer.getBoundingClientRect();
-            const x = e.clientX - rect.left; // x position within element
-            const y = e.clientY - rect.top;  // y position within element
+            const x = e.clientX - rect.left;
+            const y = e.clientY - rect.top;
             
             const centerX = rect.width / 2;
             const centerY = rect.height / 2;
             
-            // Calculate tilt degrees (max 10 degrees)
             const rotateX = ((centerY - y) / centerY) * 10;
             const rotateY = ((x - centerX) / centerX) * 12;
             
