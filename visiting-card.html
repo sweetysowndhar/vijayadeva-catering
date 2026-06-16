@@ -30,17 +30,17 @@
             --font-handwritten: 'Caveat', cursive;
         }
 
-        /* Artisanal Kraft Theme overrides */
-        body.theme-handmade {
-            --bg-color: #f2ede4;
-            --card-bg: #fdfbf7;
-            --accent: #b85d38; /* Terracotta Clay Red */
-            --accent-light: #eae3d5;
-            --accent-dark: #7e381b;
-            --text-main: #362e26;
-            --text-muted: #827566;
-            --border-color: #dfd5c6;
-            --card-shadow: 0 12px 30px rgba(62, 53, 43, 0.1);
+        /* Crimson Minimal Theme overrides */
+        body.theme-minimal {
+            --bg-color: #f0f2f5;
+            --card-bg: #ffffff;
+            --accent: #b32025; /* Crimson Red */
+            --accent-light: #fcebeb;
+            --accent-dark: #7c1216;
+            --text-main: #111111;
+            --text-muted: #555555;
+            --border-color: #e2e8f0;
+            --card-shadow: 0 10px 30px rgba(0, 0, 0, 0.06);
         }
 
         /* Luxury Gold Theme overrides */
@@ -85,10 +85,10 @@
                 radial-gradient(circle at 90% 80%, rgba(41, 26, 16, 0.3) 0%, transparent 50%);
         }
 
-        body.theme-handmade {
+        body.theme-minimal {
             background-image: 
-                radial-gradient(circle at 10% 20%, rgba(184, 93, 56, 0.04) 0%, transparent 40%),
-                radial-gradient(circle at 90% 80%, rgba(130, 117, 102, 0.06) 0%, transparent 40%);
+                radial-gradient(circle at 10% 20%, rgba(179, 32, 37, 0.03) 0%, transparent 40%),
+                radial-gradient(circle at 90% 80%, rgba(26, 26, 26, 0.05) 0%, transparent 50%);
         }
 
         body.theme-luxury {
@@ -200,7 +200,7 @@
             color: var(--bg-color);
         }
         
-        body.theme-handmade .toggle-btn.active {
+        body.theme-minimal .toggle-btn.active {
             color: #ffffff;
         }
 
@@ -270,12 +270,11 @@
             box-shadow: 0 15px 35px rgba(0, 0, 0, 0.6);
         }
 
-        /* Theme 2: Handmade deckle-edge / paper texture filter */
-        body.theme-handmade .card-face {
-            border: 1.5px solid var(--accent);
-            outline: 1px dashed rgba(184, 93, 56, 0.3);
-            outline-offset: -8px;
-            filter: url(#paper-texture);
+        /* Theme 2: Crimson Minimal overrides */
+        body.theme-minimal .card-face {
+            background: #ffffff;
+            border: 1px solid #e2e8f0;
+            box-shadow: var(--card-shadow);
         }
 
         /* Top Center Blessing Header */
@@ -345,9 +344,68 @@
             transition: filter 0.5s;
         }
 
-        /* Sepia toning for images in handmade theme */
-        body.theme-handmade .food-thumb img {
-            filter: sepia(0.65) contrast(1.05) brightness(0.95);
+        /* Minimal circular food thumbnails */
+        body.theme-minimal .food-thumb {
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            border: 2px solid #ffffff;
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+            align-self: center;
+            margin: 0;
+        }
+
+        body.theme-minimal .food-thumb img {
+            border-radius: 50%;
+            filter: none;
+        }
+
+        body.theme-minimal .food-thumb-1 {
+            margin-bottom: -15px; /* overlap slightly */
+            z-index: 2;
+        }
+
+        body.theme-minimal .food-thumb-2 {
+            z-index: 1;
+            margin-right: 0;
+            align-self: center;
+        }
+
+        body.theme-minimal .food-thumb-3 {
+            display: none;
+        }
+
+        /* Hide utensil SVGs on minimal theme */
+        body.theme-minimal .utensil-svg-1,
+        body.theme-minimal .utensil-svg-2,
+        body.theme-minimal .utensil-svg-3 {
+            display: none;
+        }
+        
+        /* Minimal Theme Corner Decors */
+        .minimal-red-stroke {
+            display: none;
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 130px;
+            height: 100px;
+            z-index: 1;
+        }
+
+        .minimal-banquet-svg {
+            display: none;
+            position: absolute;
+            bottom: 0;
+            right: 0;
+            width: 170px;
+            height: 120px;
+            z-index: 1;
+        }
+        
+        body.theme-minimal .minimal-red-stroke,
+        body.theme-minimal .minimal-banquet-svg {
+            display: block;
         }
 
         /* Utensil SVGs on Front Face */
@@ -440,8 +498,48 @@
             line-height: 1;
         }
 
-        body.theme-handmade .card-brand-services .text-large {
-            color: var(--text-main);
+        body.theme-minimal .card-brand-logo-name {
+            font-family: var(--font-display);
+            font-size: 1.4rem;
+            color: #111111;
+            text-transform: none;
+            font-weight: 700;
+            letter-spacing: 0.5px;
+        }
+        
+        body.theme-minimal .card-brand-services-wrapper {
+            margin-top: 1px;
+            gap: 0;
+        }
+        
+        body.theme-minimal .card-brand-services {
+            font-family: var(--font-display);
+            font-size: 0.9rem;
+            color: #555555;
+            font-weight: 500;
+            text-transform: none;
+            letter-spacing: 0.5px;
+            display: block;
+            margin-top: 0;
+        }
+        
+        body.theme-minimal .card-brand-services .text-large {
+            font-family: var(--font-display);
+            font-size: 0.95rem;
+            color: #444444;
+            text-transform: none;
+            letter-spacing: 0.5px;
+            font-weight: 600;
+        }
+
+        body.theme-minimal .card-brand-services .text-script {
+            font-family: var(--font-display);
+            font-size: 0.95rem;
+            color: #444444;
+            font-weight: 600;
+            margin-top: 0;
+            margin-left: 4px;
+            display: inline-block;
         }
 
         .card-brand-services .text-script {
@@ -464,8 +562,8 @@
             margin-left: 15px;
         }
 
-        body.theme-handmade .chef-hat-svg {
-            color: var(--accent);
+        body.theme-minimal .chef-hat-svg {
+            display: none;
         }
 
         body.theme-luxury .chef-hat-svg {
@@ -483,8 +581,13 @@
             transition: border-color 0.5s;
         }
 
-        body.theme-handmade .card-chef-section {
-            border-bottom-color: rgba(184, 93, 56, 0.2);
+        body.theme-minimal .card-chef-section {
+            border-bottom: none;
+            flex-direction: column;
+            align-items: flex-start;
+            margin-top: 12px;
+            margin-bottom: 12px;
+            gap: 2px;
         }
 
         .card-chef-name {
@@ -495,8 +598,22 @@
             letter-spacing: 0.5px;
         }
 
-        body.theme-handmade .card-chef-name {
-            color: var(--text-main);
+        body.theme-minimal .card-chef-name {
+            font-family: var(--font-display);
+            font-size: 1.15rem;
+            color: #111111;
+            text-transform: none;
+            font-weight: 700;
+            letter-spacing: 0px;
+        }
+        
+        body.theme-minimal .card-chef-role {
+            font-family: 'Outfit', sans-serif;
+            font-size: 0.72rem;
+            color: #666666;
+            text-transform: none;
+            font-weight: 500;
+            letter-spacing: 0.5px;
         }
 
         .card-chef-role {
@@ -529,10 +646,15 @@
             transition: all 0.3s;
         }
 
-        body.theme-handmade .contact-pill {
-            background: rgba(255, 255, 255, 0.65);
-            color: var(--text-main);
-            border-color: var(--accent);
+        body.theme-minimal .contact-pill {
+            border: none;
+            background: transparent;
+            padding: 0;
+            height: auto;
+            gap: 12px;
+            color: #333333;
+            font-size: 0.75rem;
+            margin-bottom: 2px;
         }
 
         .contact-pill:hover {
@@ -540,8 +662,9 @@
             color: var(--bg-color);
         }
 
-        body.theme-handmade .contact-pill:hover {
-            color: #ffffff;
+        body.theme-minimal .contact-pill:hover {
+            background: transparent;
+            color: var(--accent);
         }
 
         .pill-icon {
@@ -554,8 +677,26 @@
             flex-shrink: 0;
         }
 
-        body.theme-handmade .pill-icon {
-            color: var(--text-main);
+        body.theme-minimal .pill-icon {
+            color: #111111;
+            font-size: 0.8rem;
+        }
+        
+        body.theme-minimal .contact-pill:hover .pill-icon {
+            color: var(--accent);
+        }
+        
+        /* By default, hide address pill in other themes, and show instagram */
+        .address-pill {
+            display: none;
+        }
+
+        body.theme-minimal .address-pill {
+            display: flex;
+        }
+
+        body.theme-minimal .card-contact-pills a[href*="instagram"] {
+            display: none;
         }
 
         .contact-pill:hover .pill-icon {
@@ -669,8 +810,9 @@
             align-self: center;
         }
 
-        body.theme-handmade .card-back-main h4 {
-            border-bottom-color: rgba(184, 93, 56, 0.2);
+        body.theme-minimal .card-back-main h4 {
+            color: var(--accent);
+            border-bottom-color: #eaeaea;
         }
 
         .events-list {
@@ -683,8 +825,8 @@
             letter-spacing: 1px;
         }
 
-        body.theme-handmade .events-list {
-            color: var(--text-main);
+        body.theme-minimal .events-list {
+            color: #333333;
         }
 
         .events-list span {
@@ -709,8 +851,8 @@
             object-fit: cover;
         }
 
-        body.theme-handmade .corner-photo img {
-            filter: sepia(0.65) contrast(1.05) brightness(0.95);
+        body.theme-minimal .card-back .corner-photo {
+            display: none;
         }
 
         .corner-photo-tr {
@@ -743,8 +885,8 @@
             transition: border-color 0.5s;
         }
 
-        body.theme-handmade .card-back-footer {
-            border-top-color: rgba(184, 93, 56, 0.15);
+        body.theme-minimal .card-back-footer {
+            border-top-color: #eaeaea;
         }
 
         .card-back-footer .web-link {
@@ -791,8 +933,14 @@
             box-shadow: 0 4px 12px rgba(230, 92, 0, 0.15);
         }
         
-        body.theme-handmade .btn-primary {
+        body.theme-minimal .btn-primary {
+            background: var(--accent);
             color: #ffffff;
+            box-shadow: 0 4px 12px rgba(179, 32, 37, 0.15);
+        }
+        
+        body.theme-minimal .btn-primary:hover {
+            box-shadow: 0 6px 18px rgba(179, 32, 37, 0.25);
         }
 
         body.theme-luxury .btn-primary {
@@ -903,6 +1051,11 @@
             transition: transform 0.3s ease;
         }
 
+        body.theme-minimal .qr-card {
+            background: #ffffff;
+            border: 1px solid #e2e8f0;
+        }
+
         body.theme-handmade .qr-card {
             filter: url(#paper-texture);
             border: 1.5px solid var(--accent);
@@ -955,7 +1108,7 @@
             color: var(--bg-color);
         }
         
-        body.theme-handmade .close-qr:hover {
+        body.theme-minimal .close-qr:hover {
             color: #ffffff;
         }
 
@@ -979,7 +1132,7 @@
             gap: 8px;
         }
 
-        body.theme-handmade .toast {
+        body.theme-minimal .toast {
             color: #ffffff;
         }
 
@@ -1080,10 +1233,18 @@
                 print-color-adjust: exact !important;
             }
 
-            body.theme-handmade .card-face {
-                outline: 1.2px dashed rgba(184, 93, 56, 0.45) !important;
-                outline-offset: -6px !important;
-                filter: none !important;
+            body.theme-minimal .card-face {
+                border: 1px solid #e2e8f0 !important;
+                background-color: #ffffff !important;
+                box-shadow: none !important;
+            }
+            .card-face .minimal-red-stroke {
+                width: 95px !important;
+                height: 75px !important;
+            }
+            .card-face .minimal-banquet-svg {
+                width: 130px !important;
+                height: 90px !important;
             }
 
             .card-back {
@@ -1210,7 +1371,7 @@
         }
     </style>
 </head>
-<body class="theme-wood">
+<body class="theme-minimal">
 
     <!-- SVG Filter for Organic Fibrous Handmade Paper Effect -->
     <svg style="display: none;">
@@ -1235,8 +1396,8 @@
     <div class="selectors-row">
         <!-- Style Theme Switcher -->
         <div class="toggle-box" id="themeSwitcher">
-            <button class="toggle-btn active" onclick="setCardTheme('wood')">Rustic Wood</button>
-            <button class="toggle-btn" onclick="setCardTheme('handmade')">Artisanal Kraft</button>
+            <button class="toggle-btn active" onclick="setCardTheme('minimal')">Crimson Minimal</button>
+            <button class="toggle-btn" onclick="setCardTheme('wood')">Rustic Wood</button>
             <button class="toggle-btn" onclick="setCardTheme('luxury')">Luxury Gold</button>
         </div>
 
@@ -1256,6 +1417,20 @@
                 <!-- Center Top Blessing Header -->
                 <div class="card-blessing" data-i18n="card_blessing">ஸ்ரீ செஞ்சியாண்டவர் துணை</div>
                 
+                <!-- Minimal Theme Corner Decors -->
+                <svg class="minimal-red-stroke" viewBox="0 0 100 100" preserveAspectRatio="none">
+                    <path d="M 30 0 C 50 30, 80 15, 100 65 L 100 0 Z" fill="var(--accent)" />
+                </svg>
+                <svg class="minimal-banquet-svg" viewBox="0 0 100 100" preserveAspectRatio="none">
+                    <defs>
+                        <pattern id="banquetPatternFront" patternUnits="userSpaceOnUse" width="100" height="100">
+                            <image href="assets/hero_banquet.png" x="0" y="0" width="100" height="100" preserveAspectRatio="xMidYMid slice" />
+                        </pattern>
+                    </defs>
+                    <path d="M 40 100 L 100 100 L 100 20 L 75 20 Z" fill="url(#banquetPatternFront)" />
+                    <line x1="40" y1="100" x2="75" y2="20" stroke="#ffffff" stroke-width="1.5" />
+                </svg>
+
                 <div class="card-inner-container">
                     <!-- Left Column: Catering Food Thumbnails -->
                     <div class="card-left-col">
@@ -1340,6 +1515,12 @@
                                 <div class="pill-icon"><i class="fa-brands fa-instagram"></i></div>
                                 <span class="pill-text">@lover_of_hillson</span>
                             </a>
+
+                            <!-- Pill 4: Address (Only visible in minimal theme) -->
+                            <div class="contact-pill address-pill" onclick="stopPropagation(event)">
+                                <div class="pill-icon"><i class="fa-solid fa-map-marker-alt"></i></div>
+                                <span class="pill-text" data-i18n="card_address">Nangudi Post, Cuddalore District</span>
+                            </div>
                         </div>
 
                         <div class="card-footer-web">
@@ -1357,6 +1538,20 @@
             <div class="card-face card-back">
                 <!-- Center Top Blessing Header -->
                 <div class="card-blessing" data-i18n="card_blessing">ஸ்ரீ செஞ்சியாண்டவர் துணை</div>
+
+                <!-- Minimal Theme Corner Decors -->
+                <svg class="minimal-red-stroke" viewBox="0 0 100 100" preserveAspectRatio="none">
+                    <path d="M 30 0 C 50 30, 80 15, 100 65 L 100 0 Z" fill="var(--accent)" />
+                </svg>
+                <svg class="minimal-banquet-svg" viewBox="0 0 100 100" preserveAspectRatio="none">
+                    <defs>
+                        <pattern id="banquetPatternBack" patternUnits="userSpaceOnUse" width="100" height="100">
+                            <image href="assets/hero_banquet.png" x="0" y="0" width="100" height="100" preserveAspectRatio="xMidYMid slice" />
+                        </pattern>
+                    </defs>
+                    <path d="M 40 100 L 100 100 L 100 20 L 75 20 Z" fill="url(#banquetPatternBack)" />
+                    <line x1="40" y1="100" x2="75" y2="20" stroke="#ffffff" stroke-width="1.5" />
+                </svg>
 
                 <div class="card-back-container">
                     <!-- Left: Kitchen Utensils Stack -->
@@ -1465,7 +1660,7 @@
 
     <script>
         // Active states settings
-        let currentTheme = 'wood';
+        let currentTheme = 'minimal';
         let currentLang = 'ta';
 
         // Flip Card Logic
@@ -1493,6 +1688,7 @@
                 card_subtitle: "CATERING Services",
                 services_script: "Services",
                 card_role: "Executive Chef",
+                card_address: "Nangudi Post, Cuddalore District",
                 card_whatsapp: "WhatsApp Chat",
                 card_location: "Tamil Nadu, India",
                 card_scan: "Scan Menu",
@@ -1524,6 +1720,7 @@
                 card_subtitle: "கேட்டரிங் சர்வீஸ்",
                 services_script: "சர்வீஸ்",
                 card_role: "எக்ஸிகியூட்டிவ் செஃப்",
+                card_address: "நங்குடி போஸ்ட், கடலூர் மாவட்டம்",
                 card_whatsapp: "வாட்ஸ்அப் சாட் (நேரடி)",
                 card_location: "தமிழ்நாடு, இந்தியா",
                 card_scan: "மெனுவைப் பார்க்க",
@@ -1550,13 +1747,13 @@
             currentTheme = theme;
             
             // Toggle body class
-            document.body.classList.remove('theme-handmade', 'theme-luxury', 'theme-wood');
+            document.body.classList.remove('theme-handmade', 'theme-luxury', 'theme-wood', 'theme-minimal');
             if (theme === 'luxury') {
                 document.body.classList.add('theme-luxury');
-            } else if (theme === 'handmade') {
-                document.body.classList.add('theme-handmade');
-            } else {
+            } else if (theme === 'wood') {
                 document.body.classList.add('theme-wood');
+            } else {
+                document.body.classList.add('theme-minimal');
             }
 
             // Update active state of theme switcher buttons
@@ -1564,12 +1761,12 @@
             const buttons = switcher.querySelectorAll('.toggle-btn');
             buttons.forEach(btn => {
                 btn.classList.remove('active');
+                if (btn.textContent.toLowerCase().includes('minimal') && theme === 'minimal') btn.classList.add('active');
                 if (btn.textContent.toLowerCase().includes('wood') && theme === 'wood') btn.classList.add('active');
-                if (btn.textContent.toLowerCase().includes('kraft') && theme === 'handmade') btn.classList.add('active');
                 if (btn.textContent.toLowerCase().includes('luxury') && theme === 'luxury') btn.classList.add('active');
             });
             
-            const themeLabel = theme === 'wood' ? 'Rustic Wood' : (theme === 'handmade' ? 'Artisanal Kraft' : 'Luxury Gold');
+            const themeLabel = theme === 'minimal' ? 'Crimson Minimal' : (theme === 'wood' ? 'Rustic Wood' : 'Luxury Gold');
             showToast(`Theme switched to ${themeLabel}!`);
         }
 
