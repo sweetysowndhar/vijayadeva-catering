@@ -209,7 +209,7 @@
             perspective: 1200px;
             width: 100%;
             max-width: 420px;
-            height: 260px;
+            height: 240px;
             margin-bottom: 30px;
             cursor: pointer;
             animation: scaleIn 0.8s cubic-bezier(0.175, 0.885, 0.32, 1.275);
@@ -235,7 +235,7 @@
             -webkit-backface-visibility: hidden;
             backface-visibility: hidden;
             border-radius: 20px;
-            padding: 22px 25px;
+            padding: 15px 20px;
             display: flex;
             flex-direction: column;
             justify-content: space-between;
@@ -266,7 +266,7 @@
                     transparent 4px
                 ),
                 linear-gradient(135deg, #2a1810 0%, #150b07 100%);
-            border: 2px solid var(--accent);
+            border: 2.5px solid var(--accent);
             box-shadow: 0 15px 35px rgba(0, 0, 0, 0.6);
         }
 
@@ -297,24 +297,24 @@
             display: flex;
             height: 100%;
             width: 100%;
-            gap: 15px;
+            gap: 12px;
             align-items: center;
-            margin-top: 5px;
+            margin-top: 8px;
         }
 
         /* Left side: Food thumbnails showcase */
         .card-left-col {
-            width: 30%;
+            width: 32%;
             display: flex;
             flex-direction: column;
-            gap: 6px;
             position: relative;
-            height: 90%;
-            justify-content: center;
+            height: 100%;
+            justify-content: space-between;
+            padding: 8px 0;
         }
 
         .food-thumb {
-            width: 100%;
+            width: 72px;
             height: 52px;
             border-radius: 6px;
             border: 2px solid var(--accent);
@@ -322,6 +322,20 @@
             box-shadow: 0 3px 6px rgba(0, 0, 0, 0.4);
             position: relative;
             background: #24140c;
+            z-index: 2;
+        }
+
+        .food-thumb-1 {
+            align-self: flex-start;
+        }
+
+        .food-thumb-2 {
+            align-self: flex-end;
+            margin-right: 4px;
+        }
+
+        .food-thumb-3 {
+            align-self: flex-start;
         }
 
         .food-thumb img {
@@ -336,40 +350,60 @@
             filter: sepia(0.65) contrast(1.05) brightness(0.95);
         }
 
-        /* Left Column Utensils Overlay */
-        .utensils-deco-top {
+        /* Utensil SVGs on Front Face */
+        .utensil-svg-1 {
             position: absolute;
-            top: -12px;
-            left: -15px;
-            font-size: 1.2rem;
-            color: var(--accent);
-            opacity: 0.25;
-            transform: rotate(-15deg);
+            left: 2px;
+            top: 55px;
+            width: 22px;
+            height: 22px;
+            color: var(--text-muted);
+            opacity: 0.45;
+            z-index: 1;
         }
 
-        .utensils-deco-bottom {
+        .utensil-svg-2 {
             position: absolute;
-            bottom: -12px;
-            right: -10px;
-            font-size: 1.1rem;
-            color: var(--accent);
-            opacity: 0.25;
-            transform: rotate(45deg);
+            left: 4px;
+            top: 132px;
+            width: 22px;
+            height: 22px;
+            color: var(--text-muted);
+            opacity: 0.45;
+            z-index: 1;
+        }
+
+        .utensil-svg-3 {
+            position: absolute;
+            left: 38px;
+            bottom: 2px;
+            width: 26px;
+            height: 26px;
+            color: var(--text-muted);
+            opacity: 0.45;
+            z-index: 1;
         }
 
         /* Right side: Branding & Pills details */
         .card-right-col {
-            width: 70%;
+            width: 68%;
             display: flex;
             flex-direction: column;
             height: 100%;
             justify-content: space-between;
-            padding: 8px 0 2px 0;
+            padding: 2px 0;
             text-align: left;
         }
 
+        .card-brand-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            width: 100%;
+        }
+
         .card-brand-section {
-            margin-top: 8px;
+            margin-top: 2px;
         }
 
         .card-brand-logo-name {
@@ -381,39 +415,95 @@
             font-family: var(--font-display);
         }
 
-        .card-brand-services {
-            font-family: var(--font-display);
-            font-size: 1.6rem;
-            font-weight: 700;
-            color: #ffffff;
-            line-height: 1;
-            margin-top: 1px;
-            letter-spacing: 1px;
-            text-transform: uppercase;
+        .card-brand-services-wrapper {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin-top: 2px;
         }
 
-        body.theme-handmade .card-brand-services {
+        .card-brand-services {
+            font-family: var(--font-display);
+            line-height: 1.1;
+            display: flex;
+            flex-direction: column;
+            position: relative;
+        }
+
+        .card-brand-services .text-large {
+            font-family: 'Outfit', sans-serif;
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: #ffffff;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            line-height: 1;
+        }
+
+        body.theme-handmade .card-brand-services .text-large {
             color: var(--text-main);
         }
 
-        /* Handwritten font for display services in handmade theme */
-        body.theme-handmade .card-brand-services {
+        .card-brand-services .text-script {
             font-family: var(--font-handwritten);
-            font-size: 2.2rem;
-            font-weight: 700;
-            letter-spacing: 0px;
+            font-size: 1.5rem;
             color: var(--accent);
-            line-height: 0.9;
+            font-weight: 700;
+            margin-top: -6px;
+            margin-left: 25px;
+            line-height: 1;
         }
 
+        /* Chef Hat Outline Icon */
+        .chef-hat-svg {
+            width: 35px;
+            height: 35px;
+            color: #ffffff;
+            opacity: 0.9;
+            flex-shrink: 0;
+            margin-left: 15px;
+        }
+
+        body.theme-handmade .chef-hat-svg {
+            color: var(--accent);
+        }
+
+        body.theme-luxury .chef-hat-svg {
+            color: var(--accent);
+        }
+
+        /* Left-Right split Chef Credentials */
         .card-chef-section {
-            margin: 2px 0 6px 0;
+            display: flex;
+            justify-content: space-between;
+            width: 100%;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.12);
+            padding-bottom: 3px;
+            margin-bottom: 6px;
+            transition: border-color 0.5s;
+        }
+
+        body.theme-handmade .card-chef-section {
+            border-bottom-color: rgba(184, 93, 56, 0.2);
         }
 
         .card-chef-name {
             font-size: 0.72rem;
-            color: var(--text-muted);
+            font-weight: 600;
+            color: #ffffff;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        body.theme-handmade .card-chef-name {
+            color: var(--text-main);
+        }
+
+        .card-chef-role {
+            font-size: 0.68rem;
+            color: var(--accent);
             font-weight: 500;
+            text-transform: uppercase;
             letter-spacing: 0.5px;
         }
 
@@ -427,15 +517,15 @@
         .contact-pill {
             display: flex;
             align-items: center;
-            border: 1.5px solid var(--accent);
-            border-radius: 20px;
-            padding: 3px 12px;
-            background: rgba(0, 0, 0, 0.35);
+            border: 2px solid var(--accent);
+            border-radius: 50px;
+            padding: 3px 14px;
+            background: rgba(0, 0, 0, 0.4);
             text-decoration: none;
             color: #ffffff;
             font-size: 0.72rem;
-            height: 25px;
-            gap: 8px;
+            height: 26px;
+            gap: 10px;
             transition: all 0.3s;
         }
 
@@ -455,13 +545,17 @@
         }
 
         .pill-icon {
-            color: var(--accent);
-            font-size: 0.72rem;
+            color: #ffffff;
+            font-size: 0.75rem;
             display: flex;
             align-items: center;
             justify-content: center;
             transition: color 0.3s;
             flex-shrink: 0;
+        }
+
+        body.theme-handmade .pill-icon {
+            color: var(--text-main);
         }
 
         .contact-pill:hover .pill-icon {
@@ -492,15 +586,18 @@
         }
 
         .card-footer-web {
-            font-size: 0.65rem;
-            text-align: right;
+            font-size: 0.62rem;
+            text-align: center;
             margin-top: 4px;
+            width: 100%;
         }
 
         .card-footer-web a {
-            color: var(--accent);
+            color: #ffffff;
             text-decoration: none;
-            font-weight: 600;
+            font-weight: 500;
+            letter-spacing: 1px;
+            text-transform: uppercase;
         }
 
         .card-front .flip-hint {
@@ -541,17 +638,11 @@
             flex-direction: column;
             justify-content: space-around;
             align-items: center;
-            height: 90%;
-            border-right: 1px solid rgba(255, 255, 255, 0.1);
-            color: var(--accent);
-            opacity: 0.35;
-            font-size: 1.5rem;
-            padding-right: 12px;
-            transition: border-color 0.5s;
-        }
-
-        body.theme-handmade .card-back-utensils {
-            border-right-color: rgba(184, 93, 56, 0.2);
+            height: 85%;
+            color: var(--text-muted);
+            opacity: 0.5;
+            font-size: 1.6rem;
+            padding-right: 10px;
         }
 
         /* Back side right: Events list and corner photos */
@@ -560,8 +651,8 @@
             display: flex;
             flex-direction: column;
             justify-content: center;
-            height: 90%;
-            padding-left: 5px;
+            height: 85%;
+            padding-right: 55px;
             text-align: center;
         }
 
@@ -603,9 +694,9 @@
         /* Rotated corner photo styling */
         .corner-photo {
             position: absolute;
-            width: 55px;
-            height: 48px;
-            border-radius: 5px;
+            width: 65px;
+            height: 52px;
+            border-radius: 6px;
             border: 2px solid var(--accent);
             overflow: hidden;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
@@ -623,15 +714,17 @@
         }
 
         .corner-photo-tr {
-            top: 15px;
+            top: 25px;
             right: 15px;
-            transform: rotate(6deg);
+            transform: rotate(8deg);
+            z-index: 2;
         }
 
         .corner-photo-br {
-            bottom: 15px;
+            bottom: 25px;
             right: 15px;
-            transform: rotate(-6deg);
+            transform: rotate(-8deg);
+            z-index: 2;
         }
 
         .card-back-footer {
@@ -959,16 +1052,18 @@
             .card-face {
                 position: relative !important;
                 display: flex !important;
+                flex-direction: row !important;
                 width: 3.5in !important;
                 height: 2.0in !important;
-                padding: 15px 20px !important;
+                padding: 12px 16px !important;
                 border-radius: 0 !important; /* Sharp corners for printing/cutting */
-                border: 1.5px solid var(--accent) !important;
+                border: 2px solid var(--accent) !important;
                 box-shadow: none !important;
                 background-color: var(--card-bg) !important;
                 color: var(--text-main) !important;
                 transform: none !important;
                 page-break-inside: avoid !important;
+                overflow: hidden !important;
             }
 
             body.theme-wood .card-face {
@@ -987,31 +1082,117 @@
 
             body.theme-handmade .card-face {
                 outline: 1.2px dashed rgba(184, 93, 56, 0.45) !important;
-                outline-offset: -8px !important;
+                outline-offset: -6px !important;
                 filter: none !important;
-            }
-
-            .card-front {
-                justify-content: center !important;
-                align-items: center !important;
             }
 
             .card-back {
                 transform: none !important;
             }
 
-            /* Keep colors legible */
-            .chef-title h3, .card-brand-logo-name, .logo-svg, .qr-label, .card-blessing {
-                color: var(--accent) !important;
-                fill: var(--accent) !important;
+            /* Print-specific scaling for front left column */
+            .card-face .card-left-col {
+                width: 32% !important;
+                padding: 4px 0 !important;
+            }
+            .card-face .food-thumb {
+                width: 60px !important;
+                height: 42px !important;
+                border-width: 1.5px !important;
+            }
+            .card-face .food-thumb-2 {
+                margin-right: 2px !important;
+            }
+            .card-face .utensil-svg-1 {
+                top: 44px !important;
+                width: 18px !important;
+                height: 18px !important;
+            }
+            .card-face .utensil-svg-2 {
+                top: 104px !important;
+                width: 18px !important;
+                height: 18px !important;
+            }
+            .card-face .utensil-svg-3 {
+                left: 30px !important;
+                bottom: 1px !important;
+                width: 20px !important;
+                height: 20px !important;
             }
 
-            .detail-icon-box, .pill-icon {
-                background: rgba(184, 93, 56, 0.1) !important;
+            /* Print-specific scaling for front right column */
+            .card-face .card-right-col {
+                width: 68% !important;
+                padding: 0 !important;
+            }
+            .card-face .card-brand-services .text-large {
+                font-size: 1.4rem !important;
+            }
+            .card-face .card-brand-services .text-script {
+                font-size: 1.2rem !important;
+                margin-top: -4px !important;
+                margin-left: 15px !important;
+            }
+            .card-face .chef-hat-svg {
+                width: 26px !important;
+                height: 26px !important;
+                margin-left: 10px !important;
+            }
+            .card-face .card-chef-name, 
+            .card-face .card-chef-role {
+                font-size: 0.62rem !important;
+            }
+            .card-face .contact-pill {
+                height: 21px !important;
+                border-width: 1.5px !important;
+                padding: 2px 10px !important;
+                gap: 6px !important;
+                font-size: 0.62rem !important;
+            }
+            .card-face .pill-icon {
+                font-size: 0.62rem !important;
+                color: #ffffff !important;
+            }
+            .card-face .card-footer-web {
+                font-size: 0.52rem !important;
+                margin-top: 2px !important;
+            }
+
+            /* Print-specific scaling for back face */
+            .card-face.card-back .card-back-utensils {
+                font-size: 1.2rem !important;
+                width: 20% !important;
+                border-right: none !important;
+            }
+            .card-face.card-back .card-back-main {
+                width: 80% !important;
+                padding-right: 45px !important;
+            }
+            .card-face.card-back .card-back-main h4 {
+                font-size: 0.75rem !important;
+                margin-bottom: 4px !important;
+            }
+            .card-face.card-back .events-list {
+                font-size: 0.58rem !important;
+                gap: 3px !important;
+            }
+            .card-face.card-back .corner-photo {
+                width: 50px !important;
+                height: 40px !important;
+                border-width: 1.5px !important;
+            }
+            .card-face.card-back .corner-photo-tr {
+                top: 15px !important;
+                right: 10px !important;
+            }
+            .card-face.card-back .corner-photo-br {
+                bottom: 15px !important;
+                right: 10px !important;
+            }
+
+            /* Keep colors legible */
+            .card-brand-logo-name, .card-blessing {
                 color: var(--accent) !important;
-                border: 1px solid var(--accent) !important;
-                -webkit-print-color-adjust: exact;
-                print-color-adjust: exact;
             }
 
             .qr-tiny-svg {
@@ -1076,36 +1257,67 @@
                 <div class="card-blessing" data-i18n="card_blessing">ஸ்ரீ செஞ்சியாண்டவர் துணை</div>
                 
                 <div class="card-inner-container">
-                    <!-- Left Column: Catering/Chef Images -->
+                    <!-- Left Column: Catering Food Thumbnails -->
                     <div class="card-left-col">
-                        <!-- Utensils Deco outlines -->
-                        <div class="utensils-deco-top"><i class="fa-solid fa-spoon"></i></div>
+                        <!-- Image 1: Non-Veg Delicacy (Pepper Chicken) -->
+                        <div class="food-thumb food-thumb-1">
+                            <img src="assets/pepper_chicken.png" alt="Signature Pepper Chicken">
+                        </div>
                         
-                        <!-- Image 1: Chief Chef Portrait -->
-                        <div class="food-thumb">
-                            <img src="assets/chief_chef.png" alt="Chief Chef Photo">
-                        </div>
+                        <!-- Utensil Outline 1: Fork and Spatula -->
+                        <svg class="utensil-svg-1" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M5 3v5a1.5 1.5 0 0 0 3 0V3M6.5 3v5M6.5 9.5 v 8" />
+                            <path d="M15 3h4v4.5h-4zM16.2 3.8v3M17.8 3.8v3M17 7.5v10" />
+                        </svg>
+                        
                         <!-- Image 2: Paneer Tikka (Veg Specialty) -->
-                        <div class="food-thumb">
-                            <img src="assets/paneer_tikka.png" alt="Paneer Tikka">
+                        <div class="food-thumb food-thumb-2">
+                            <img src="assets/paneer_tikka.png" alt="Shahi Paneer Tikka">
                         </div>
-                        <!-- Image 3: Non-Veg Delicacy -->
-                        <div class="food-thumb">
-                            <img src="assets/nonveg_feast.png" alt="Non-Veg Feast">
+                        
+                        <!-- Utensil Outline 2: Spoon/Turner or Ladle -->
+                        <svg class="utensil-svg-2" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M5 8h5v4H5zM6 9v2M7.5 9v2M9 9v2M10 10h8" />
+                        </svg>
+
+                        <!-- Image 3: Vegetarian Feast Platter -->
+                        <div class="food-thumb food-thumb-3">
+                            <img src="assets/veg_feast.png" alt="Traditional Veg Feast">
                         </div>
 
-                        <div class="utensils-deco-bottom"><i class="fa-solid fa-sink"></i></div>
+                        <!-- Utensil Outline 3: Crossed Knife and Cleaver -->
+                        <svg class="utensil-svg-3" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M4 20l4-4M8 16l11-11c0 0-2-2-3-1L5 13l3 3z" />
+                            <path d="M20 20l-4-4M16 16L7 7l3-3 9 9-3 3z" />
+                        </svg>
                     </div>
 
                     <!-- Right Column: Catering details & Contact Pills -->
                     <div class="card-right-col">
-                        <div class="card-brand-section">
-                            <span class="card-brand-logo-name" data-i18n="card_title">விஜயதேவா கேட்டரிங்</span>
-                            <h3 class="card-brand-services" data-i18n="card_subtitle">CATERING Services</h3>
+                        
+                        <!-- Header split layout (Branding details + Chef hat outline icon) -->
+                        <div class="card-brand-header">
+                            <div class="card-brand-section">
+                                <span class="card-brand-logo-name" data-i18n="card_title">விஜயதேவா கேட்டரிங்</span>
+                                <div class="card-brand-services-wrapper">
+                                    <h3 class="card-brand-services">
+                                        <span class="text-large">CATERING</span>
+                                        <span class="text-script" data-i18n="services_script">Services</span>
+                                    </h3>
+                                    <!-- Chef Hat outline Icon -->
+                                    <svg class="chef-hat-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                                        <path d="M6 18V6a4 4 0 0 1 8 0v12" stroke-linecap="round" stroke-linejoin="round"/>
+                                        <path d="M18 18V9a4 4 0 0 0-8 0v9" stroke-linecap="round" stroke-linejoin="round"/>
+                                        <path d="M3 18h18a1 1 0 0 1 1 1v2a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1v-2a1 1 0 0 1 1-1z" stroke-linecap="round" stroke-linejoin="round"/>
+                                    </svg>
+                                </div>
+                            </div>
                         </div>
 
+                        <!-- Left-Right split Chef Name & Title -->
                         <div class="card-chef-section">
-                            <span class="card-chef-name" data-i18n="chef_name">சௌந்தர் • எக்ஸிகியூட்டிவ் செஃப்</span>
+                            <span class="card-chef-name">Sowndhar</span>
+                            <span class="card-chef-role" data-i18n="card_role">Executive Chef</span>
                         </div>
 
                         <div class="card-contact-pills">
@@ -1169,7 +1381,7 @@
                         </div>
                     </div>
 
-                    <!-- Rorated Corner Photos (To match wood plank layout) -->
+                    <!-- Rotated Corner Photos -->
                     <div class="corner-photo corner-photo-tr">
                         <img src="assets/pepper_chicken.png" alt="Signature Pepper Chicken">
                     </div>
@@ -1279,7 +1491,8 @@
                 hint_text: "Tap Card to Flip",
                 card_title: "Vijayadeva Catering",
                 card_subtitle: "CATERING Services",
-                chef_name: "Sowndhar • Executive Chef",
+                services_script: "Services",
+                card_role: "Executive Chef",
                 card_whatsapp: "WhatsApp Chat",
                 card_location: "Tamil Nadu, India",
                 card_scan: "Scan Menu",
@@ -1309,7 +1522,8 @@
                 hint_text: "திருப்ப தட்டவும்",
                 card_title: "விஜயதேவா கேட்டரிங்",
                 card_subtitle: "கேட்டரிங் சர்வீஸ்",
-                chef_name: "சௌந்தர் • எக்ஸிகியூட்டிவ் செஃப்",
+                services_script: "சர்வீஸ்",
+                card_role: "எக்ஸிகியூட்டிவ் செஃப்",
                 card_whatsapp: "வாட்ஸ்அப் சாட் (நேரடி)",
                 card_location: "தமிழ்நாடு, இந்தியா",
                 card_scan: "மெனுவைப் பார்க்க",
@@ -1317,7 +1531,7 @@
                 card_back_title: "அனைத்து சுபநிகழ்ச்சிகளுக்கும் சிறந்த சேவை",
                 event_birthdays: "பிறந்தநாள் விழாக்கள்",
                 event_social: "பொது நிகழ்ச்சிகள்",
-                event_weddings: "திருமண விழாக்கள்",
+                event_weddings: "திருமணம் விழாக்கள்",
                 event_meetings: "கார்ப்பரேட் கூட்டங்கள்",
                 event_anniversaries: "திருமண நாள் விழாக்கள்",
                 event_luncheons: "மதிய & இரவு விருந்துகள்",
@@ -1376,6 +1590,21 @@
             document.querySelectorAll('[data-i18n]').forEach(el => {
                 const key = el.getAttribute('data-i18n');
                 if (cardTranslations[lang] && cardTranslations[lang][key]) {
+                    // Check if it has child spans for CATERING Services
+                    if (key === 'card_subtitle') {
+                        const largeSpan = el.querySelector('.text-large');
+                        const scriptSpan = el.querySelector('.text-script');
+                        if (largeSpan && scriptSpan) {
+                            if (lang === 'ta') {
+                                largeSpan.textContent = 'கேட்டரிங்';
+                                scriptSpan.textContent = 'சர்வீஸ்';
+                            } else {
+                                largeSpan.textContent = 'CATERING';
+                                scriptSpan.textContent = 'Services';
+                            }
+                            return;
+                        }
+                    }
                     el.textContent = cardTranslations[lang][key];
                 }
             });
