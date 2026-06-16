@@ -12,8 +12,26 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     
     <style>
-        /* Theme Variables - Defaults to Handmade Kraft Theme */
+        /* Theme Variables - Defaults to Rustic Wood Plank Theme */
         :root {
+            --bg-color: #1a0f0a;
+            --card-bg: #291a10;
+            --accent: #e65c00; /* Terracotta Orange Accent */
+            --accent-light: #ffd8c2;
+            --accent-dark: #8c3200;
+            --text-main: #ffffff;
+            --text-muted: #dcd0bc;
+            --border-color: #e65c00;
+            --whatsapp-green: #25d366;
+            --whatsapp-dark: #128c7e;
+            --card-shadow: 0 15px 35px rgba(0, 0, 0, 0.7);
+            
+            --font-display: 'Cormorant Garamond', serif;
+            --font-handwritten: 'Caveat', cursive;
+        }
+
+        /* Artisanal Kraft Theme overrides */
+        body.theme-handmade {
             --bg-color: #f2ede4;
             --card-bg: #fdfbf7;
             --accent: #b85d38; /* Terracotta Clay Red */
@@ -22,12 +40,7 @@
             --text-main: #362e26;
             --text-muted: #827566;
             --border-color: #dfd5c6;
-            --whatsapp-green: #25d366;
-            --whatsapp-dark: #128c7e;
             --card-shadow: 0 12px 30px rgba(62, 53, 43, 0.1);
-            
-            --font-display: 'Cormorant Garamond', serif;
-            --font-handwritten: 'Caveat', cursive;
         }
 
         /* Luxury Gold Theme overrides */
@@ -65,14 +78,19 @@
             transition: background-color 0.5s ease, color 0.5s ease;
         }
 
-        /* Handmade watercolor gradient */
+        /* Ambient background styles per theme */
+        body.theme-wood {
+            background-image: 
+                radial-gradient(circle at 10% 20%, rgba(230, 92, 0, 0.05) 0%, transparent 40%),
+                radial-gradient(circle at 90% 80%, rgba(41, 26, 16, 0.3) 0%, transparent 50%);
+        }
+
         body.theme-handmade {
             background-image: 
                 radial-gradient(circle at 10% 20%, rgba(184, 93, 56, 0.04) 0%, transparent 40%),
                 radial-gradient(circle at 90% 80%, rgba(130, 117, 102, 0.06) 0%, transparent 40%);
         }
 
-        /* Luxury geometric gradients */
         body.theme-luxury {
             background-image: 
                 radial-gradient(circle at 10% 20%, rgba(212, 175, 55, 0.05) 0%, transparent 40%),
@@ -127,7 +145,7 @@
             color: var(--accent);
             letter-spacing: 2px;
             text-transform: uppercase;
-            text-shadow: 0 2px 10px rgba(184, 93, 56, 0.05);
+            text-shadow: 0 2px 10px rgba(230, 92, 0, 0.1);
             margin-bottom: 3px;
             transition: color 0.5s ease;
         }
@@ -140,6 +158,7 @@
             color: var(--text-muted);
             font-size: 0.95rem;
             letter-spacing: 1px;
+            transition: color 0.5s;
         }
 
         /* Selectors Box */
@@ -151,10 +170,9 @@
             animation: fadeInDown 0.8s ease-out;
         }
 
-        /* Style Toggles */
         .toggle-box {
             display: flex;
-            background: rgba(0, 0, 0, 0.04);
+            background: rgba(0, 0, 0, 0.08);
             border: 1px solid var(--border-color);
             border-radius: 20px;
             padding: 3px;
@@ -229,105 +247,272 @@
             transition: background 0.5s, border 0.5s, box-shadow 0.5s;
         }
 
-        /* Handmade deckle-edge / stitched border */
+        /* Theme 1: Wood plank backgrounds */
+        body.theme-wood .card-face {
+            background-color: #24140c;
+            background-image: 
+                repeating-linear-gradient(
+                    to bottom,
+                    rgba(0, 0, 0, 0.3) 0px,
+                    rgba(0, 0, 0, 0.3) 2px,
+                    transparent 2px,
+                    transparent 48px
+                ),
+                repeating-linear-gradient(
+                    to right,
+                    rgba(255,255,255,0.015) 0px,
+                    rgba(255,255,255,0.015) 1px,
+                    transparent 1px,
+                    transparent 4px
+                ),
+                linear-gradient(135deg, #2a1810 0%, #150b07 100%);
+            border: 2px solid var(--accent);
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.6);
+        }
+
+        /* Theme 2: Handmade deckle-edge / paper texture filter */
         body.theme-handmade .card-face {
             border: 1.5px solid var(--accent);
             outline: 1px dashed rgba(184, 93, 56, 0.3);
             outline-offset: -8px;
-            /* Applying high-fidelity paper texture filter */
             filter: url(#paper-texture);
         }
 
-        /* Front Face */
-        .card-front {
-            align-items: center;
-            justify-content: center;
-            gap: 10px;
-        }
-
-        .card-front .logo-container {
-            width: 75px;
-            height: 75px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            background: radial-gradient(circle, rgba(184, 93, 56, 0.08) 0%, transparent 70%);
-            border-radius: 50%;
-            margin-bottom: 2px;
-            transition: background 0.5s;
-        }
-
-        body.theme-luxury .card-front .logo-container {
-            background: radial-gradient(circle, rgba(212, 175, 55, 0.15) 0%, transparent 70%);
-        }
-
-        .card-front .logo-svg {
-            width: 50px;
-            height: 50px;
-            fill: var(--accent);
-            filter: drop-shadow(0 2px 4px rgba(184, 93, 56, 0.15));
-            transition: fill 0.5s, filter 0.5s;
-        }
-
-        body.theme-luxury .card-front .logo-svg {
-            filter: drop-shadow(0 2px 5px rgba(212, 175, 55, 0.3));
-        }
-
-        .card-front h2 {
-            font-family: var(--font-display);
-            font-size: 2.1rem;
-            font-weight: 600;
+        /* Top Center Blessing Header */
+        .card-blessing {
+            position: absolute;
+            top: 6px;
+            left: 0;
+            right: 0;
+            text-align: center;
+            font-size: 0.62rem;
             color: var(--accent);
-            letter-spacing: 1.5px;
-            line-height: 1.1;
-            transition: color 0.5s, font 0.5s;
-        }
-
-        /* Handwritten font for front title in handmade theme */
-        body.theme-handmade .card-front h2 {
-            font-family: var(--font-handwritten);
-            font-size: 3.1rem;
-            font-weight: 700;
-            letter-spacing: 0px;
-            color: var(--accent);
-        }
-
-        .card-front .divider {
-            width: 80px;
-            height: 1.5px;
-            background: linear-gradient(90deg, transparent, var(--accent), transparent);
-            margin: 2px 0;
-            transition: background 0.5s;
-        }
-
-        .card-front p.tagline {
-            font-size: 0.85rem;
-            color: var(--text-muted);
             letter-spacing: 2px;
+            font-weight: 700;
             text-transform: uppercase;
         }
 
-        .card-front p.tamil-tagline {
-            font-size: 0.8rem;
-            color: var(--accent);
-            letter-spacing: 0.5px;
-            opacity: 0.85;
-            margin-top: -2px;
+        /* Front Face Layout Split (Left Thumbnails Column / Right Contacts Column) */
+        .card-inner-container {
+            display: flex;
+            height: 100%;
+            width: 100%;
+            gap: 15px;
+            align-items: center;
+            margin-top: 5px;
         }
 
-        body.theme-luxury p.tamil-tagline {
-            color: var(--accent-light);
+        /* Left side: Food thumbnails showcase */
+        .card-left-col {
+            width: 30%;
+            display: flex;
+            flex-direction: column;
+            gap: 6px;
+            position: relative;
+            height: 90%;
+            justify-content: center;
+        }
+
+        .food-thumb {
+            width: 100%;
+            height: 52px;
+            border-radius: 6px;
+            border: 2px solid var(--accent);
+            overflow: hidden;
+            box-shadow: 0 3px 6px rgba(0, 0, 0, 0.4);
+            position: relative;
+            background: #24140c;
+        }
+
+        .food-thumb img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: filter 0.5s;
+        }
+
+        /* Sepia toning for images in handmade theme */
+        body.theme-handmade .food-thumb img {
+            filter: sepia(0.65) contrast(1.05) brightness(0.95);
+        }
+
+        /* Left Column Utensils Overlay */
+        .utensils-deco-top {
+            position: absolute;
+            top: -12px;
+            left: -15px;
+            font-size: 1.2rem;
+            color: var(--accent);
+            opacity: 0.25;
+            transform: rotate(-15deg);
+        }
+
+        .utensils-deco-bottom {
+            position: absolute;
+            bottom: -12px;
+            right: -10px;
+            font-size: 1.1rem;
+            color: var(--accent);
+            opacity: 0.25;
+            transform: rotate(45deg);
+        }
+
+        /* Right side: Branding & Pills details */
+        .card-right-col {
+            width: 70%;
+            display: flex;
+            flex-direction: column;
+            height: 100%;
+            justify-content: space-between;
+            padding: 8px 0 2px 0;
+            text-align: left;
+        }
+
+        .card-brand-section {
+            margin-top: 8px;
+        }
+
+        .card-brand-logo-name {
+            font-size: 0.78rem;
+            color: var(--accent);
+            font-weight: 600;
+            letter-spacing: 1.5px;
+            text-transform: uppercase;
+            font-family: var(--font-display);
+        }
+
+        .card-brand-services {
+            font-family: var(--font-display);
+            font-size: 1.6rem;
+            font-weight: 700;
+            color: #ffffff;
+            line-height: 1;
+            margin-top: 1px;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+        }
+
+        body.theme-handmade .card-brand-services {
+            color: var(--text-main);
+        }
+
+        /* Handwritten font for display services in handmade theme */
+        body.theme-handmade .card-brand-services {
+            font-family: var(--font-handwritten);
+            font-size: 2.2rem;
+            font-weight: 700;
+            letter-spacing: 0px;
+            color: var(--accent);
+            line-height: 0.9;
+        }
+
+        .card-chef-section {
+            margin: 2px 0 6px 0;
+        }
+
+        .card-chef-name {
+            font-size: 0.72rem;
+            color: var(--text-muted);
+            font-weight: 500;
+            letter-spacing: 0.5px;
+        }
+
+        /* Contact Details Rounded Pills (capsule border styling) */
+        .card-contact-pills {
+            display: flex;
+            flex-direction: column;
+            gap: 5px;
+        }
+
+        .contact-pill {
+            display: flex;
+            align-items: center;
+            border: 1.5px solid var(--accent);
+            border-radius: 20px;
+            padding: 3px 12px;
+            background: rgba(0, 0, 0, 0.35);
+            text-decoration: none;
+            color: #ffffff;
+            font-size: 0.72rem;
+            height: 25px;
+            gap: 8px;
+            transition: all 0.3s;
+        }
+
+        body.theme-handmade .contact-pill {
+            background: rgba(255, 255, 255, 0.65);
+            color: var(--text-main);
+            border-color: var(--accent);
+        }
+
+        .contact-pill:hover {
+            background: var(--accent);
+            color: var(--bg-color);
+        }
+
+        body.theme-handmade .contact-pill:hover {
+            color: #ffffff;
+        }
+
+        .pill-icon {
+            color: var(--accent);
+            font-size: 0.72rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: color 0.3s;
+            flex-shrink: 0;
+        }
+
+        .contact-pill:hover .pill-icon {
+            color: inherit;
+        }
+
+        .pill-text {
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+
+        .pill-text-scroll {
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            width: 100%;
+        }
+
+        .pill-text-scroll a {
+            color: inherit;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        .pill-text-scroll a:hover {
+            text-decoration: underline;
+        }
+
+        .card-footer-web {
+            font-size: 0.65rem;
+            text-align: right;
+            margin-top: 4px;
+        }
+
+        .card-footer-web a {
+            color: var(--accent);
+            text-decoration: none;
+            font-weight: 600;
         }
 
         .card-front .flip-hint {
             position: absolute;
-            bottom: 12px;
-            font-size: 0.7rem;
+            bottom: 4px;
+            right: 0px;
+            font-size: 0.58rem;
             color: var(--text-muted);
-            letter-spacing: 1px;
+            letter-spacing: 0.5px;
             display: flex;
             align-items: center;
-            gap: 5px;
+            gap: 4px;
             opacity: 0.6;
         }
 
@@ -335,209 +520,144 @@
             animation: bounce 1.5s infinite;
         }
 
-        /* Back Face Details */
+        /* BACK FACE LAYOUT */
         .card-back {
             transform: rotateY(180deg);
-            text-align: left;
-            justify-content: space-between;
         }
 
-        .card-back-header {
+        .card-back-container {
             display: flex;
-            justify-content: space-between;
+            height: 100%;
+            width: 100%;
             align-items: center;
-            border-bottom: 1px solid rgba(184, 93, 56, 0.15);
-            padding-bottom: 8px;
+            gap: 10px;
+            margin-top: 10px;
+        }
+
+        /* Back side left: Utensils Column */
+        .card-back-utensils {
+            width: 20%;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-around;
+            align-items: center;
+            height: 90%;
+            border-right: 1px solid rgba(255, 255, 255, 0.1);
+            color: var(--accent);
+            opacity: 0.35;
+            font-size: 1.5rem;
+            padding-right: 12px;
             transition: border-color 0.5s;
         }
 
-        body.theme-luxury .card-back-header {
-            border-color: rgba(212, 175, 55, 0.15);
+        body.theme-handmade .card-back-utensils {
+            border-right-color: rgba(184, 93, 56, 0.2);
         }
 
-        .chef-title h3 {
-            font-family: var(--font-display);
-            font-size: 1.35rem;
-            font-weight: 700;
-            color: var(--accent);
-            letter-spacing: 0.5px;
-            transition: color 0.5s;
-        }
-
-        .chef-title p.role {
-            font-size: 0.72rem;
-            color: var(--text-muted);
-            text-transform: uppercase;
-            letter-spacing: 0.8px;
-            margin-top: 1px;
-        }
-
-        /* Rounded photo avatar */
-        .chef-avatar-container {
-            width: 44px;
-            height: 44px;
-            border-radius: 50%;
-            border: 1.5px solid var(--accent);
-            overflow: hidden;
+        /* Back side right: Events list and corner photos */
+        .card-back-main {
+            width: 80%;
             display: flex;
-            align-items: center;
+            flex-direction: column;
             justify-content: center;
-            background: rgba(184, 93, 56, 0.1);
-            flex-shrink: 0;
-            box-shadow: 0 2px 6px rgba(62, 53, 43, 0.15);
-            margin-left: 10px;
-            transition: border 0.5s, background 0.5s;
+            height: 90%;
+            padding-left: 5px;
+            text-align: center;
         }
 
-        body.theme-luxury .chef-avatar-container {
-            border-color: var(--accent);
-            background: rgba(212, 175, 55, 0.15);
-            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+        .card-back-main h4 {
+            font-family: var(--font-display);
+            font-size: 0.95rem;
+            color: var(--accent);
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            border-bottom: 1px solid rgba(230, 92, 0, 0.2);
+            padding-bottom: 4px;
+            margin-bottom: 8px;
+            display: inline-block;
+            align-self: center;
         }
 
-        .chef-avatar-img {
+        body.theme-handmade .card-back-main h4 {
+            border-bottom-color: rgba(184, 93, 56, 0.2);
+        }
+
+        .events-list {
+            display: flex;
+            flex-direction: column;
+            gap: 5px;
+            font-size: 0.7rem;
+            font-weight: 600;
+            color: #ffffff;
+            letter-spacing: 1px;
+        }
+
+        body.theme-handmade .events-list {
+            color: var(--text-main);
+        }
+
+        .events-list span {
+            text-transform: uppercase;
+        }
+
+        /* Rotated corner photo styling */
+        .corner-photo {
+            position: absolute;
+            width: 55px;
+            height: 48px;
+            border-radius: 5px;
+            border: 2px solid var(--accent);
+            overflow: hidden;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+            background: #24140c;
+        }
+
+        .corner-photo img {
             width: 100%;
             height: 100%;
             object-fit: cover;
-            transition: filter 0.5s;
         }
 
-        /* Warm sepia-toning for portrait in handmade theme to match craft paper */
-        body.theme-handmade .chef-avatar-img {
+        body.theme-handmade .corner-photo img {
             filter: sepia(0.65) contrast(1.05) brightness(0.95);
         }
 
-        .card-back-content {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            margin: 12px 0;
-            gap: 15px;
+        .corner-photo-tr {
+            top: 15px;
+            right: 15px;
+            transform: rotate(6deg);
         }
 
-        .card-back-info {
-            display: flex;
-            flex-direction: column;
-            gap: 8px;
-            flex-grow: 1;
-        }
-
-        .card-back-qr {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            gap: 4px;
-            background: rgba(0, 0, 0, 0.03);
-            padding: 6px;
-            border-radius: 10px;
-            border: 1px solid var(--border-color);
-            flex-shrink: 0;
-            width: 86px;
-            transition: border 0.5s, background 0.5s;
-        }
-
-        body.theme-luxury .card-back-qr {
-            background: rgba(255, 255, 255, 0.04);
-            border-color: rgba(212, 175, 55, 0.15);
-        }
-
-        .qr-tiny-svg {
-            background: white;
-            padding: 4px;
-            border-radius: 4px;
-            width: 68px;
-            height: 68px;
-            display: block;
-        }
-
-        .qr-label {
-            font-size: 0.56rem;
-            color: var(--accent);
-            text-transform: uppercase;
-            letter-spacing: 0.5px;
-            font-weight: 600;
-        }
-
-        .detail-item {
-            display: flex;
-            align-items: center;
-            gap: 10px;
-            text-decoration: none;
-            color: var(--text-main);
-            font-size: 0.8rem;
-            transition: color 0.3s;
-        }
-
-        .detail-item:hover {
-            color: var(--accent);
-        }
-
-        .detail-icon-box {
-            width: 24px;
-            height: 24px;
-            border-radius: 5px;
-            background: rgba(184, 93, 56, 0.1);
-            border: 1px solid rgba(184, 93, 56, 0.15);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: var(--accent);
-            font-size: 0.75rem;
-            flex-shrink: 0;
-            transition: all 0.3s;
-        }
-
-        body.theme-luxury .detail-icon-box {
-            background: rgba(212, 175, 55, 0.15);
-            border-color: rgba(212, 175, 55, 0.2);
-        }
-
-        .detail-item:hover .detail-icon-box {
-            background: var(--accent);
-            color: var(--bg-color);
-            transform: translateY(-2px);
-        }
-        
-        body.theme-handmade .detail-item:hover .detail-icon-box {
-            color: #ffffff;
-        }
-
-        .detail-item.whatsapp-item:hover .detail-icon-box {
-            background: var(--whatsapp-green);
-            border-color: var(--whatsapp-green);
-            color: white;
+        .corner-photo-br {
+            bottom: 15px;
+            right: 15px;
+            transform: rotate(-6deg);
         }
 
         .card-back-footer {
+            position: absolute;
+            bottom: 6px;
+            left: 20%;
+            right: 0;
             display: flex;
             justify-content: space-between;
             align-items: center;
-            font-size: 0.68rem;
+            padding: 0 20px;
+            font-size: 0.58rem;
             color: var(--text-muted);
-            border-top: 1px solid rgba(184, 93, 56, 0.15);
-            padding-top: 8px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            padding-top: 4px;
             transition: border-color 0.5s;
         }
 
-        body.theme-luxury .card-back-footer {
-            border-color: rgba(212, 175, 55, 0.15);
+        body.theme-handmade .card-back-footer {
+            border-top-color: rgba(184, 93, 56, 0.15);
         }
 
         .card-back-footer .web-link {
             color: var(--accent);
             text-decoration: none;
             font-weight: 600;
-            max-width: 65%;
-            overflow: hidden;
-            text-overflow: ellipsis;
-            white-space: nowrap;
-            transition: color 0.5s;
-        }
-
-        body.theme-luxury .card-back-footer .web-link {
-            color: var(--accent-light);
-            font-weight: 500;
         }
 
         /* Action Buttons Grid */
@@ -575,7 +695,7 @@
         .btn-primary {
             background: var(--accent);
             color: var(--bg-color);
-            box-shadow: 0 4px 12px rgba(184, 93, 56, 0.15);
+            box-shadow: 0 4px 12px rgba(230, 92, 0, 0.15);
         }
         
         body.theme-handmade .btn-primary {
@@ -590,11 +710,7 @@
 
         .btn-primary:hover {
             transform: translateY(-2px);
-            box-shadow: 0 6px 18px rgba(184, 93, 56, 0.25);
-        }
-
-        body.theme-luxury .btn-primary:hover {
-            box-shadow: 0 6px 20px rgba(212, 175, 55, 0.35);
+            box-shadow: 0 6px 18px rgba(230, 92, 0, 0.25);
         }
 
         .btn-secondary {
@@ -699,10 +815,6 @@
             border: 1.5px solid var(--accent);
             outline: 1px dashed rgba(184, 93, 56, 0.3);
             outline-offset: -8px;
-        }
-
-        .qr-popup.active .qr-card {
-            transform: scale(1);
         }
 
         .qr-code-svg {
@@ -820,7 +932,6 @@
                 min-height: auto !important;
             }
 
-            /* Hide all UI elements except the card itself */
             .orb, header, .selectors-row, .action-container, .qr-section, .toast, .flip-hint, .qr-popup {
                 display: none !important;
             }
@@ -860,10 +971,24 @@
                 page-break-inside: avoid !important;
             }
 
+            body.theme-wood .card-face {
+                background-color: #24140c !important;
+                background-image: 
+                    repeating-linear-gradient(
+                        to bottom,
+                        rgba(0, 0, 0, 0.3) 0px,
+                        rgba(0, 0, 0, 0.3) 2px,
+                        transparent 2px,
+                        transparent 48px
+                    ) !important;
+                -webkit-print-color-adjust: exact !important;
+                print-color-adjust: exact !important;
+            }
+
             body.theme-handmade .card-face {
                 outline: 1.2px dashed rgba(184, 93, 56, 0.45) !important;
                 outline-offset: -8px !important;
-                filter: none !important; /* Filters can mess up high-res desktop printing sometimes, keep vectors sharp */
+                filter: none !important;
             }
 
             .card-front {
@@ -873,27 +998,20 @@
 
             .card-back {
                 transform: none !important;
-                justify-content: space-between !important;
             }
 
             /* Keep colors legible */
-            .chef-title h3, .card-front h2, .logo-svg, .qr-label {
+            .chef-title h3, .card-brand-logo-name, .logo-svg, .qr-label, .card-blessing {
                 color: var(--accent) !important;
                 fill: var(--accent) !important;
             }
 
-            .detail-icon-box {
+            .detail-icon-box, .pill-icon {
                 background: rgba(184, 93, 56, 0.1) !important;
                 color: var(--accent) !important;
                 border: 1px solid var(--accent) !important;
                 -webkit-print-color-adjust: exact;
                 print-color-adjust: exact;
-            }
-
-            body.theme-luxury .detail-icon-box {
-                background: rgba(212, 175, 55, 0.15) !important;
-                color: #d4af37 !important;
-                border: 1px solid #d4af37 !important;
             }
 
             .qr-tiny-svg {
@@ -904,7 +1022,6 @@
                 color: var(--accent) !important;
             }
 
-            /* Make sure colors render correctly in print */
             * {
                 -webkit-print-color-adjust: exact !important;
                 print-color-adjust: exact !important;
@@ -912,18 +1029,15 @@
         }
     </style>
 </head>
-<body class="theme-handmade">
+<body class="theme-wood">
 
     <!-- SVG Filter for Organic Fibrous Handmade Paper Effect -->
     <svg style="display: none;">
         <filter id="paper-texture" x="0%" y="0%" width="100%" height="100%">
-            <!-- Generate fine noise simulating pulp fiber bumps -->
             <feTurbulence type="fractalNoise" baseFrequency="0.04" numOctaves="3" result="noise" />
-            <!-- Diffuse light to create realistic 3D shadows on paper grains -->
             <feDiffuseLighting in="noise" lighting-color="#fff" surfaceScale="2" result="light">
                 <feDistantLight azimuth="45" elevation="60" />
             </feDiffuseLighting>
-            <!-- Multiply light map with original card vector graphics -->
             <feBlend mode="multiply" in="SourceGraphic" in2="light" />
         </filter>
     </svg>
@@ -940,7 +1054,8 @@
     <div class="selectors-row">
         <!-- Style Theme Switcher -->
         <div class="toggle-box" id="themeSwitcher">
-            <button class="toggle-btn active" onclick="setCardTheme('handmade')">Artisanal Kraft</button>
+            <button class="toggle-btn active" onclick="setCardTheme('wood')">Rustic Wood</button>
+            <button class="toggle-btn" onclick="setCardTheme('handmade')">Artisanal Kraft</button>
             <button class="toggle-btn" onclick="setCardTheme('luxury')">Luxury Gold</button>
         </div>
 
@@ -957,20 +1072,70 @@
             
             <!-- FRONT FACE -->
             <div class="card-face card-front">
-                <div class="logo-container">
-                    <!-- Elegant Culinary Logo Emblem -->
-                    <svg class="logo-svg" viewBox="0 0 100 100">
-                        <path d="M50 15 C45 15, 42 22, 42 25 C45 28, 55 28, 58 25 C58 22, 55 15, 50 15 Z" />
-                        <path d="M30 40 C30 32, 70 32, 70 40 L73 45 C75 52, 72 75, 50 78 C28 75, 25 52, 27 45 Z" />
-                        <path d="M28 48 C20 48, 20 60, 27 60" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round"/>
-                        <path d="M72 48 C80 48, 80 60, 73 60" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round"/>
-                    </svg>
-                </div>
-                <h2 data-i18n="front_title">விஜயதேவா</h2>
-                <div class="divider"></div>
-                <p class="tagline" data-i18n="front_tagline">பிரீமியம் கேட்டரிங் சர்வீஸ்</p>
-                <p class="tamil-tagline" data-i18n="front_tamil_tagline">Premium Catering Services</p>
+                <!-- Center Top Blessing Header -->
+                <div class="card-blessing" data-i18n="card_blessing">ஸ்ரீ செஞ்சியாண்டவர் துணை</div>
                 
+                <div class="card-inner-container">
+                    <!-- Left Column: Catering/Chef Images -->
+                    <div class="card-left-col">
+                        <!-- Utensils Deco outlines -->
+                        <div class="utensils-deco-top"><i class="fa-solid fa-spoon"></i></div>
+                        
+                        <!-- Image 1: Chief Chef Portrait -->
+                        <div class="food-thumb">
+                            <img src="assets/chief_chef.png" alt="Chief Chef Photo">
+                        </div>
+                        <!-- Image 2: Paneer Tikka (Veg Specialty) -->
+                        <div class="food-thumb">
+                            <img src="assets/paneer_tikka.png" alt="Paneer Tikka">
+                        </div>
+                        <!-- Image 3: Non-Veg Delicacy -->
+                        <div class="food-thumb">
+                            <img src="assets/nonveg_feast.png" alt="Non-Veg Feast">
+                        </div>
+
+                        <div class="utensils-deco-bottom"><i class="fa-solid fa-sink"></i></div>
+                    </div>
+
+                    <!-- Right Column: Catering details & Contact Pills -->
+                    <div class="card-right-col">
+                        <div class="card-brand-section">
+                            <span class="card-brand-logo-name" data-i18n="card_title">விஜயதேவா கேட்டரிங்</span>
+                            <h3 class="card-brand-services" data-i18n="card_subtitle">CATERING Services</h3>
+                        </div>
+
+                        <div class="card-chef-section">
+                            <span class="card-chef-name" data-i18n="chef_name">சௌந்தர் • எக்ஸிகியூட்டிவ் செஃப்</span>
+                        </div>
+
+                        <div class="card-contact-pills">
+                            <!-- Pill 1: Phone Numbers -->
+                            <div class="contact-pill" onclick="stopPropagation(event)">
+                                <div class="pill-icon"><i class="fa-solid fa-phone"></i></div>
+                                <div class="pill-text-scroll">
+                                    <a href="tel:+919003952911">+91 90039 52911</a> / <a href="tel:+917598695797">+91 75986 95797</a>
+                                </div>
+                            </div>
+
+                            <!-- Pill 2: Email -->
+                            <a href="mailto:inquire@vijayadevacatering.com" class="contact-pill" onclick="stopPropagation(event)">
+                                <div class="pill-icon"><i class="fa-solid fa-envelope"></i></div>
+                                <span class="pill-text">inquire@vijayadevacatering.com</span>
+                            </a>
+
+                            <!-- Pill 3: Instagram -->
+                            <a href="https://www.instagram.com/lover_of_hillson" target="_blank" class="contact-pill" onclick="stopPropagation(event)">
+                                <div class="pill-icon"><i class="fa-brands fa-instagram"></i></div>
+                                <span class="pill-text">@lover_of_hillson</span>
+                            </a>
+                        </div>
+
+                        <div class="card-footer-web">
+                            <a href="https://sweetysowndhar.github.io/vijayadeva-catering/" target="_blank" onclick="stopPropagation(event)">sweetysowndhar.github.io/vijayadeva-catering</a>
+                        </div>
+                    </div>
+                </div>
+
                 <div class="flip-hint">
                     <span data-i18n="hint_text">திருப்ப தட்டவும்</span> <i class="fa-solid fa-arrow-right-rotate"></i>
                 </div>
@@ -978,62 +1143,47 @@
 
             <!-- BACK FACE -->
             <div class="card-face card-back">
-                <div class="card-back-header">
-                    <div class="chef-title">
-                        <h3 data-i18n="card_title">விஜயதேவா கேட்டரிங்</h3>
-                        <p class="role" data-i18n="card_role">பாரம்பரிய & நவீன உணவு வல்லுநர்கள்</p>
-                    </div>
-                    <!-- Chef Portrait Avatar -->
-                    <div class="chef-avatar-container" onclick="stopPropagation(event)">
-                        <img class="chef-avatar-img" src="assets/chief_chef.png" alt="Chef Sowndhar">
-                    </div>
-                </div>
+                <!-- Center Top Blessing Header -->
+                <div class="card-blessing" data-i18n="card_blessing">ஸ்ரீ செஞ்சியாண்டவர் துணை</div>
 
-                <div class="card-back-content">
-                    <div class="card-back-info">
-                        <!-- Call Link 1 -->
-                        <a href="tel:+919003952911" class="detail-item" onclick="stopPropagation(event)">
-                            <div class="detail-icon-box">
-                                <i class="fa-solid fa-phone"></i>
-                            </div>
-                            <span>+91 90039 52911</span>
-                        </a>
+                <div class="card-back-container">
+                    <!-- Left: Kitchen Utensils Stack -->
+                    <div class="card-back-utensils">
+                        <i class="fa-solid fa-spoon"></i>
+                        <i class="fa-solid fa-utensils"></i>
+                        <i class="fa-solid fa-kitchen-set"></i>
+                        <i class="fa-solid fa-wine-glass"></i>
+                    </div>
 
-                        <!-- Call Link 2 -->
-                        <a href="tel:+917598695797" class="detail-item" onclick="stopPropagation(event)">
-                            <div class="detail-icon-box">
-                                <i class="fa-solid fa-phone"></i>
-                            </div>
-                            <span>+91 75986 95797</span>
-                        </a>
+                    <!-- Right: Servicing Events list -->
+                    <div class="card-back-main">
+                        <h4 data-i18n="card_back_title">அனைத்து சுபநிகழ்ச்சிகளுக்கும் சிறந்த சேவை</h4>
                         
-                        <!-- WhatsApp Link -->
-                        <a href="https://wa.me/919003952911" target="_blank" class="detail-item whatsapp-item" onclick="stopPropagation(event)">
-                            <div class="detail-icon-box">
-                                <i class="fa-brands fa-whatsapp"></i>
-                            </div>
-                            <span data-i18n="card_whatsapp">வாட்ஸ்அப் சாட் (நேரடி)</span>
-                        </a>
-
-                        <!-- Location Link -->
-                        <a href="https://maps.google.com/?q=Tamil+Nadu,+India" target="_blank" class="detail-item" onclick="stopPropagation(event)">
-                            <div class="detail-icon-box">
-                                <i class="fa-solid fa-location-dot"></i>
-                            </div>
-                            <span data-i18n="card_location">தமிழ்நாடு, இந்தியா</span>
-                        </a>
+                        <div class="events-list">
+                            <span data-i18n="event_birthdays">பிறந்தநாள் விழாக்கள்</span>
+                            <span data-i18n="event_social">பொது நிகழ்ச்சிகள்</span>
+                            <span data-i18n="event_weddings">திருமணம் விழாக்கள்</span>
+                            <span data-i18n="event_meetings">கார்ப்பரேட் கூட்டங்கள்</span>
+                            <span data-i18n="event_anniversaries">திருமண நாள் விழாக்கள்</span>
+                            <span data-i18n="event_luncheons">மதிய & இரவு விருந்துகள்</span>
+                        </div>
                     </div>
 
-                    <!-- Real High-Scan QR code directly on back of card -->
-                    <div class="card-back-qr">
-                        <img class="qr-tiny-svg" src="https://quickchart.io/qr?text=https%3A%2F%2Fsweetysowndhar.github.io%2Fvijayadeva-catering%2F&size=120&margin=1" alt="Menu QR Code" onclick="stopPropagation(event)">
-                        <span class="qr-label" data-i18n="card_scan">மெனுவைப் பார்க்க</span>
+                    <!-- Rorated Corner Photos (To match wood plank layout) -->
+                    <div class="corner-photo corner-photo-tr">
+                        <img src="assets/pepper_chicken.png" alt="Signature Pepper Chicken">
+                    </div>
+                    <div class="corner-photo corner-photo-br">
+                        <img src="assets/paneer_tikka.png" alt="Shahi Paneer Tikka">
                     </div>
                 </div>
 
                 <div class="card-back-footer">
                     <span data-i18n="card_footer_hint">திருப்ப தட்டவும்</span>
-                    <a href="https://sweetysowndhar.github.io/vijayadeva-catering/" target="_blank" class="web-link" onclick="stopPropagation(event)">sweetysowndhar.github.io/vijayadeva-catering</a>
+                    <!-- Tiny scan menu QR code directly on back of card -->
+                    <div class="card-back-qr" style="width: auto; background: transparent; border: none; padding: 0;" onclick="stopPropagation(event)">
+                        <img class="qr-tiny-svg" src="https://quickchart.io/qr?text=https%3A%2F%2Fsweetysowndhar.github.io%2Fvijayadeva-catering%2F&size=100&margin=1" alt="Menu QR Code" style="width: 32px; height: 32px; padding: 2px; border-radius: 2px;">
+                    </div>
                 </div>
             </div>
 
@@ -1090,10 +1240,7 @@
         <div class="qr-card" onclick="stopPropagation(event)">
             <h4 data-i18n="show_qr_text">வலைத்தள QR குறியீடு</h4>
             <p>Point your phone camera here to access the digital catering menu</p>
-            
-            <!-- Real QR Code Image -->
             <img class="qr-code-svg" src="https://quickchart.io/qr?text=https%3A%2F%2Fsweetysowndhar.github.io%2Fvijayadeva-catering%2F&size=250&margin=1" alt="Menu QR Code">
-
             <p class="web-link">sweetysowndhar.github.io/vijayadeva-catering</p>
             <button class="close-qr" onclick="toggleQR()">Close</button>
         </div>
@@ -1106,7 +1253,7 @@
 
     <script>
         // Active states settings
-        let currentTheme = 'handmade';
+        let currentTheme = 'wood';
         let currentLang = 'ta';
 
         // Flip Card Logic
@@ -1125,16 +1272,25 @@
             en: {
                 header_title: "Vijayadeva Catering",
                 header_subtitle: "Artisanal Business Card • கைவினை விசிட்டிங் கார்டு",
+                card_blessing: "Sri Senjiandavar Thunai",
                 front_title: "VIJAYADEVA",
                 front_tagline: "Premium Catering Services",
                 front_tamil_tagline: "பிரீமியம் கேட்டரிங் சர்வீஸ்",
                 hint_text: "Tap Card to Flip",
                 card_title: "Vijayadeva Catering",
-                card_role: "Traditional & Modern Feast Specialists",
+                card_subtitle: "CATERING Services",
+                chef_name: "Sowndhar • Executive Chef",
                 card_whatsapp: "WhatsApp Chat",
                 card_location: "Tamil Nadu, India",
                 card_scan: "Scan Menu",
                 card_footer_hint: "Tap to Flip Card",
+                card_back_title: "Servicing All Events",
+                event_birthdays: "Birthdays",
+                event_social: "Social Events",
+                event_weddings: "Weddings",
+                event_meetings: "Meetings",
+                event_anniversaries: "Anniversaries",
+                event_luncheons: "Luncheons / Dinners",
                 btn_chat: "Chat on WhatsApp",
                 btn_save: "Save Contact",
                 btn_call: "Call Chef",
@@ -1146,16 +1302,25 @@
             ta: {
                 header_title: "விஜயதேவா கேட்டரிங்",
                 header_subtitle: "கைவினை விசிட்டிங் கார்டு • Artisanal Business Card",
+                card_blessing: "ஸ்ரீ செஞ்சியாண்டவர் துணை",
                 front_title: "விஜயதேவா",
                 front_tagline: "பிரீமியம் கேட்டரிங் சர்வீஸ்",
                 front_tamil_tagline: "Premium Catering Services",
                 hint_text: "திருப்ப தட்டவும்",
                 card_title: "விஜயதேவா கேட்டரிங்",
-                card_role: "பாரம்பரிய & நவீன உணவு வல்லுநர்கள்",
+                card_subtitle: "கேட்டரிங் சர்வீஸ்",
+                chef_name: "சௌந்தர் • எக்ஸிகியூட்டிவ் செஃப்",
                 card_whatsapp: "வாட்ஸ்அப் சாட் (நேரடி)",
                 card_location: "தமிழ்நாடு, இந்தியா",
                 card_scan: "மெனுவைப் பார்க்க",
                 card_footer_hint: "திருப்ப தட்டவும்",
+                card_back_title: "அனைத்து சுபநிகழ்ச்சிகளுக்கும் சிறந்த சேவை",
+                event_birthdays: "பிறந்தநாள் விழாக்கள்",
+                event_social: "பொது நிகழ்ச்சிகள்",
+                event_weddings: "திருமண விழாக்கள்",
+                event_meetings: "கார்ப்பரேட் கூட்டங்கள்",
+                event_anniversaries: "திருமண நாள் விழாக்கள்",
+                event_luncheons: "மதிய & இரவு விருந்துகள்",
                 btn_chat: "வாட்ஸ்அப்பில் பேச",
                 btn_save: "தொடர்பைச் சேமிக்க",
                 btn_call: "அழைக்க",
@@ -1171,12 +1336,13 @@
             currentTheme = theme;
             
             // Toggle body class
+            document.body.classList.remove('theme-handmade', 'theme-luxury', 'theme-wood');
             if (theme === 'luxury') {
-                document.body.classList.remove('theme-handmade');
                 document.body.classList.add('theme-luxury');
-            } else {
-                document.body.classList.remove('theme-luxury');
+            } else if (theme === 'handmade') {
                 document.body.classList.add('theme-handmade');
+            } else {
+                document.body.classList.add('theme-wood');
             }
 
             // Update active state of theme switcher buttons
@@ -1184,11 +1350,13 @@
             const buttons = switcher.querySelectorAll('.toggle-btn');
             buttons.forEach(btn => {
                 btn.classList.remove('active');
+                if (btn.textContent.toLowerCase().includes('wood') && theme === 'wood') btn.classList.add('active');
                 if (btn.textContent.toLowerCase().includes('kraft') && theme === 'handmade') btn.classList.add('active');
                 if (btn.textContent.toLowerCase().includes('luxury') && theme === 'luxury') btn.classList.add('active');
             });
             
-            showToast(`Theme switched to ${theme === 'handmade' ? 'Artisanal Kraft' : 'Luxury Gold'}!`);
+            const themeLabel = theme === 'wood' ? 'Rustic Wood' : (theme === 'handmade' ? 'Artisanal Kraft' : 'Luxury Gold');
+            showToast(`Theme switched to ${themeLabel}!`);
         }
 
         // Switch Card Language
