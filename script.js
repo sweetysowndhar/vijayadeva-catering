@@ -103,6 +103,8 @@ document.addEventListener('DOMContentLoaded', () => {
       contact_office_val: "Vizhuperundhurai, Nangudi Post, Srimushnam TK, Cuddalore District",
       contact_phone_title: "Call Us Directly",
       contact_email_title: "Email Inquiry",
+      contact_qr_title: "Digital Business Card",
+      contact_qr_desc: "Scan this QR code to save and view our digital business card on your phone.",
       
       form_title: "Request a Custom Proposal",
       form_label_name: "Your Full Name",
@@ -243,6 +245,8 @@ document.addEventListener('DOMContentLoaded', () => {
       contact_office_val: "விழுப்புரந்துரை, நாங்குடி போஸ்ட், ஸ்ரீமுஷ்ணம் தாலுகா, கடலூர் மாவட்டம்",
       contact_phone_title: "நேரடி அழைப்புக்கு",
       contact_email_title: "மின்னஞ்சல் முகவரி",
+      contact_qr_title: "டிஜிட்டல் விசிட்டிங் கார்டு",
+      contact_qr_desc: "எங்கள் டிஜிட்டல் விசிட்டிங் கார்டை உங்கள் மொபைலில் காண மற்றும் சேமிக்க இந்த QR குறியீட்டை ஸ்கேன் செய்யவும்.",
       
       form_title: "இலவச மதிப்பீடு பெற",
       form_label_name: "உங்கள் முழு பெயர்",
