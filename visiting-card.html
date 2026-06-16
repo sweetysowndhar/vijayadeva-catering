@@ -699,6 +699,33 @@
             display: none;
         }
 
+        /* Crimson Minimal Layout Alignments & Overrides */
+        body.theme-minimal .card-left-col {
+            justify-content: center;
+            gap: 6px;
+        }
+        body.theme-minimal .card-contact-pills {
+            max-width: 200px;
+            z-index: 3;
+            position: relative;
+        }
+        body.theme-minimal .card-footer-web {
+            text-align: left;
+            width: auto;
+            margin-top: 4px;
+        }
+        body.theme-minimal .card-footer-web a {
+            color: #777777;
+            font-size: 0.58rem;
+            text-transform: none;
+            letter-spacing: 0px;
+        }
+        body.theme-minimal .card-back-main {
+            padding-right: 0;
+            position: relative;
+            z-index: 2;
+        }
+
         .contact-pill:hover .pill-icon {
             color: inherit;
         }
@@ -1237,6 +1264,42 @@
                 border: 1px solid #e2e8f0 !important;
                 background-color: #ffffff !important;
                 box-shadow: none !important;
+            }
+            body.theme-minimal .card-face .card-left-col {
+                justify-content: center !important;
+                gap: 4px !important;
+            }
+            body.theme-minimal .card-face .food-thumb {
+                width: 55px !important;
+                height: 55px !important;
+                border-radius: 50% !important;
+                align-self: center !important;
+                margin: 0 !important;
+            }
+            body.theme-minimal .card-face .food-thumb-1 {
+                margin-bottom: -10px !important;
+            }
+            body.theme-minimal .card-face .food-thumb-2 {
+                margin-right: 0 !important;
+                align-self: center !important;
+            }
+            body.theme-minimal .card-face .card-contact-pills {
+                max-width: 155px !important;
+                z-index: 3 !important;
+                position: relative !important;
+            }
+            body.theme-minimal .card-face .card-footer-web {
+                text-align: left !important;
+                margin-top: 2px !important;
+            }
+            body.theme-minimal .card-face .card-footer-web a {
+                color: #777777 !important;
+                font-size: 0.5rem !important;
+                text-transform: none !important;
+                letter-spacing: 0px !important;
+            }
+            body.theme-minimal .card-face.card-back .card-back-main {
+                padding-right: 0 !important;
             }
             .card-face .minimal-red-stroke {
                 width: 95px !important;
