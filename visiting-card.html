@@ -1203,8 +1203,8 @@
         /* PRINT STYLESHEET (PDF & Standard Visiting Card Dimensions) */
         @media print {
             @page {
-                size: A4 portrait;
-                margin: 15mm;
+                size: 3.5in 2.0in;
+                margin: 0;
             }
 
             body {
@@ -1223,9 +1223,9 @@
 
             .card-perspective {
                 perspective: none !important;
-                width: auto !important;
-                height: auto !important;
-                margin: 20mm auto !important;
+                width: 3.5in !important;
+                height: 2.0in !important;
+                margin: 0 !important;
                 cursor: default !important;
                 box-shadow: none !important;
             }
@@ -1233,11 +1233,9 @@
             .card-inner {
                 transform: none !important;
                 transform-style: flat !important;
-                display: flex !important;
-                flex-direction: column !important;
-                gap: 40px !important;
-                align-items: center !important;
-                justify-content: center !important;
+                display: block !important;
+                width: 3.5in !important;
+                height: 2.0in !important;
             }
 
             /* Front and Back at exact physical dimensions */
@@ -1255,6 +1253,8 @@
                 color: var(--text-main) !important;
                 transform: none !important;
                 page-break-inside: avoid !important;
+                page-break-after: always !important;
+                break-after: page !important;
                 overflow: hidden !important;
             }
 
