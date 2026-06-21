@@ -737,12 +737,15 @@
             margin-bottom: 0;
         }
         body.theme-minimal .card-footer-web {
-            text-align: left;
+            position: absolute;
+            bottom: 18px;
+            left: 24px;
+            right: auto;
             width: auto;
-            margin-top: 6px;
-            padding-left: 2px;
+            text-align: left;
+            margin-top: 0;
+            padding-left: 0;
             z-index: 3;
-            position: relative;
             text-shadow: 0 0 4px #ffffff, 0 0 8px #ffffff;
         }
         body.theme-minimal .card-footer-web a {
@@ -795,8 +798,11 @@
         .card-footer-web {
             font-size: 0.62rem;
             text-align: center;
-            margin-top: 4px;
-            width: 100%;
+            position: absolute;
+            bottom: 12px;
+            right: 20px;
+            width: 68%;
+            z-index: 3;
         }
 
         .card-footer-web a {
@@ -1376,16 +1382,20 @@
                 color: #111111 !important;
             }
             body.theme-minimal .card-face .card-footer-web {
+                position: absolute !important;
+                bottom: 12px !important;
+                left: 16px !important;
+                right: auto !important;
+                width: auto !important;
                 text-align: left !important;
-                margin-top: 4px !important;
-                padding-left: 2px !important;
+                margin-top: 0 !important;
+                padding-left: 0 !important;
                 z-index: 3 !important;
-                position: relative !important;
                 text-shadow: 0 0 3px #ffffff, 0 0 6px #ffffff !important;
             }
             body.theme-minimal .card-face .card-footer-web a {
                 color: #111111 !important;
-                font-size: 0.45rem !important;
+                font-size: 0.48rem !important;
                 text-transform: none !important;
                 letter-spacing: 0px !important;
             }
@@ -1490,8 +1500,13 @@
                 color: #ffffff !important;
             }
             .card-face .card-footer-web {
+                position: absolute !important;
+                bottom: 8px !important;
+                right: 16px !important;
+                width: 68% !important;
+                text-align: center !important;
                 font-size: 0.52rem !important;
-                margin-top: 2px !important;
+                z-index: 3 !important;
             }
 
             /* Print-specific scaling for back face */
@@ -1700,11 +1715,12 @@
                                 <span class="pill-text" data-i18n="card_address">Vizhuperundhurai, Nangudi Post</span>
                             </div>
                         </div>
-
-                        <div class="card-footer-web">
-                            <a href="https://sweetysowndhar.github.io/vijayadeva-catering/" target="_blank" onclick="stopPropagation(event)">sweetysowndhar.github.io/vijayadeva-catering</a>
-                        </div>
                     </div>
+                </div>
+
+                <!-- Web Link Footer (Placed here so it can be absolute-positioned relative to the card face) -->
+                <div class="card-footer-web">
+                    <a href="https://sweetysowndhar.github.io/vijayadeva-catering/" target="_blank" onclick="stopPropagation(event)">sweetysowndhar.github.io/vijayadeva-catering</a>
                 </div>
 
                 <div class="flip-hint">
