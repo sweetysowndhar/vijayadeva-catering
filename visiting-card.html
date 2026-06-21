@@ -1539,7 +1539,7 @@
             <!-- FRONT FACE -->
             <div class="card-face card-front">
                 <!-- Center Top Blessing Header -->
-                <div class="card-blessing" data-i18n="card_blessing">ஸ்ரீ செஞ்சடவர் துணை</div>
+                <div class="card-blessing" data-i18n="card_blessing">ஸ்ரீ செஞ்சியாண்டவர் துணை</div>
                 
                 <!-- Minimal Theme Corner Decors -->
                 <svg class="minimal-red-stroke" viewBox="0 0 100 100" preserveAspectRatio="none">
@@ -1661,7 +1661,7 @@
             <!-- BACK FACE -->
             <div class="card-face card-back">
                 <!-- Center Top Blessing Header -->
-                <div class="card-blessing" data-i18n="card_blessing">ஸ்ரீ செஞ்சடவர் துணை</div>
+                <div class="card-blessing" data-i18n="card_blessing">ஸ்ரீ செஞ்சியாண்டவர் துணை</div>
 
                 <!-- Minimal Theme Corner Decors -->
                 <svg class="minimal-red-stroke" viewBox="0 0 100 100" preserveAspectRatio="none">
@@ -1712,8 +1712,11 @@
                 <div class="card-back-footer">
                     <span data-i18n="card_footer_hint">திருப்ப தட்டவும்</span>
                     <!-- Tiny scan menu QR code directly on back of card -->
-                    <div class="card-back-qr" style="width: auto; background: transparent; border: none; padding: 0;" onclick="stopPropagation(event)">
-                        <img class="qr-tiny-svg" src="https://quickchart.io/qr?text=https%3A%2F%2Fsweetysowndhar.github.io%2Fvijayadeva-catering%2F&size=100&margin=1" alt="Menu QR Code" style="width: 32px; height: 32px; padding: 2px; border-radius: 2px;">
+                    <div class="card-back-qr-wrapper" style="display: flex; align-items: center; gap: 6px; z-index: 3; margin-left: auto;" onclick="stopPropagation(event)">
+                        <span class="scan-text" data-i18n="card_scan_visit" style="font-size: 0.48rem; font-weight: 500; opacity: 0.85; margin-right: 6px; letter-spacing: -0.2px;">Scan & Visit Website</span>
+                        <div class="card-back-qr" style="width: auto; background: #ffffff; border: none; padding: 0; border-radius: 2px; display: flex; align-items: center; justify-content: center; box-shadow: 0 1px 3px rgba(0,0,0,0.15);">
+                            <img class="qr-tiny-svg" src="https://quickchart.io/qr?text=https%3A%2F%2Fsweetysowndhar.github.io%2Fvijayadeva-catering%2F&size=100&margin=1" alt="Menu QR Code" style="width: 32px; height: 32px; padding: 2px; border-radius: 2px; display: block;">
+                        </div>
                     </div>
                 </div>
             </div>
@@ -1803,7 +1806,8 @@
             en: {
                 header_title: "Vijayadeva Catering",
                 header_subtitle: "Artisanal Business Card • கைவினை விசிட்டிங் கார்டு",
-                card_blessing: "Sri Senjadavar Thunai",
+                card_blessing: "Sri Senjiandavar Thunai",
+                card_scan_visit: "Scan to Visit Website",
                 front_title: "VIJAYADEVA",
                 front_tagline: "Premium Catering Services",
                 front_tamil_tagline: "பிரீமியம் கேட்டரிங் சர்வீஸ்",
@@ -1835,7 +1839,8 @@
             ta: {
                 header_title: "விஜயதேவா கேட்டரிங்",
                 header_subtitle: "கைவினை விசிட்டிங் கார்டு • Artisanal Business Card",
-                card_blessing: "ஸ்ரீ செஞ்சடவர் துணை",
+                card_blessing: "ஸ்ரீ செஞ்சியாண்டவர் துணை",
+                card_scan_visit: "வலைத்தளம் செல்ல ஸ்கேன் செய்க",
                 front_title: "விஜயதேவா",
                 front_tagline: "பிரீமியம் கேட்டரிங் சர்வீஸ்",
                 front_tamil_tagline: "Premium Catering Services",
