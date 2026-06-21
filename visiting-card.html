@@ -600,8 +600,8 @@
             border-bottom: none;
             flex-direction: column;
             align-items: flex-start;
-            margin-top: 12px;
-            margin-bottom: 12px;
+            margin-top: 0;
+            margin-bottom: 0;
             gap: 2px;
         }
 
@@ -717,7 +717,12 @@
         /* Crimson Minimal Layout Alignments & Overrides */
         body.theme-minimal .card-left-col {
             justify-content: center;
-            gap: 6px;
+            gap: 0;
+            padding: 0;
+        }
+        body.theme-minimal .card-right-col {
+            justify-content: flex-start;
+            gap: 14px;
         }
         body.theme-minimal .card-contact-pills {
             max-width: 200px;
@@ -725,7 +730,6 @@
             position: relative;
             gap: 6px;
             text-shadow: 0 0 4px #ffffff, 0 0 8px #ffffff;
-            margin-bottom: 12px;
         }
         body.theme-minimal .contact-pill {
             border: none;
@@ -1320,6 +1324,10 @@
                 justify-content: center !important;
                 gap: 4px !important;
             }
+            body.theme-minimal .card-face .card-right-col {
+                justify-content: flex-start !important;
+                gap: 8px !important;
+            }
             body.theme-minimal .card-face .food-thumb {
                 width: 55px !important;
                 height: 55px !important;
@@ -1366,7 +1374,6 @@
                 position: relative !important;
                 gap: 4px !important;
                 margin-top: 4px !important;
-                margin-bottom: 8px !important;
                 text-shadow: 0 0 3px #ffffff, 0 0 6px #ffffff !important;
             }
             body.theme-minimal .card-face .contact-pill {
