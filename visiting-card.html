@@ -1727,8 +1727,8 @@
 
     <script>
         // Active states settings
-        let currentTheme = 'minimal';
-        let currentLang = 'ta';
+        let currentTheme = localStorage.getItem('vcard_theme') || 'minimal';
+        let currentLang = localStorage.getItem('vcard_lang') || 'ta';
 
         // Flip Card Logic
         function flipCard(event) {
@@ -1810,8 +1810,9 @@
         };
 
         // Switch Card Theme
-        function setCardTheme(theme) {
+        function setCardTheme(theme, isInitial = false) {
             currentTheme = theme;
+            localStorage.setItem('vcard_theme', theme);
             
             // Toggle body class
             document.body.classList.remove('theme-handmade', 'theme-luxury', 'theme-wood', 'theme-minimal');
@@ -1833,13 +1834,16 @@
                 if (btn.textContent.toLowerCase().includes('luxury') && theme === 'luxury') btn.classList.add('active');
             });
             
-            const themeLabel = theme === 'minimal' ? 'Crimson Minimal' : (theme === 'wood' ? 'Rustic Wood' : 'Luxury Gold');
-            showToast(`Theme switched to ${themeLabel}!`);
+            if (!isInitial) {
+                const themeLabel = theme === 'minimal' ? 'Crimson Minimal' : (theme === 'wood' ? 'Rustic Wood' : 'Luxury Gold');
+                showToast(`Theme switched to ${themeLabel}!`);
+            }
         }
 
         // Switch Card Language
         function setCardLanguage(lang) {
             currentLang = lang;
+            localStorage.setItem('vcard_lang', lang);
 
             // Update active state of language switcher buttons
             const switcher = document.getElementById('langSwitcher');
@@ -1983,6 +1987,12 @@
             if (!cardContainer.classList.contains('flipped')) {
                 cardContainer.style.transform = 'rotateX(0deg) rotateY(0deg)';
             }
+        });
+
+        // Initialize default theme and language on page load
+        window.addEventListener('DOMContentLoaded', () => {
+            setCardTheme(currentTheme, true);
+            setCardLanguage(currentLang);
         });
     </script>
 </body>
