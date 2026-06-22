@@ -503,6 +503,17 @@
             position: relative;
         }
 
+        .card-tagline {
+            font-size: 0.58rem;
+            color: var(--text-muted);
+            letter-spacing: 0.8px;
+            font-weight: 500;
+            margin-top: 4px;
+            text-transform: none;
+            opacity: 0.85;
+            font-family: var(--font-display);
+        }
+
         .card-brand-services .text-large {
             font-family: 'Outfit', sans-serif;
             font-size: 1.8rem;
@@ -536,6 +547,18 @@
             letter-spacing: 0.5px;
             display: block;
             margin-top: 0;
+        }
+
+        body.theme-minimal .card-tagline {
+            font-size: 0.55rem;
+            color: var(--accent); /* Crimson Red */
+            font-family: var(--font-display);
+            font-weight: 600;
+            letter-spacing: 0.5px;
+            margin-top: -8px;
+            text-transform: none;
+            opacity: 0.95;
+            text-shadow: 0 0 2px #ffffff;
         }
         
         body.theme-minimal .card-brand-services .text-large {
@@ -1353,6 +1376,11 @@
                 margin-left: 8px !important;
                 margin-top: -2px !important;
             }
+            body.theme-minimal .card-face .card-tagline {
+                font-size: 0.45rem !important;
+                margin-top: -4px !important;
+                color: var(--accent) !important;
+            }
             body.theme-minimal .card-face .chef-hat-svg {
                 width: 18px !important;
                 height: 18px !important;
@@ -1482,6 +1510,10 @@
             }
             .card-face .card-brand-services .text-large {
                 font-size: 1.4rem !important;
+            }
+            .card-face .card-tagline {
+                font-size: 0.48rem !important;
+                margin-top: 2px !important;
             }
             .card-face .card-brand-services .text-script {
                 font-size: 1.2rem !important;
@@ -1691,6 +1723,9 @@
                             </div>
                         </div>
 
+                        <!-- Brand Tagline/Caption -->
+                        <div class="card-tagline" data-i18n="card_tagline">சுவையில் தனித்துவம், சேவையில் அன்பு</div>
+
                         <!-- Left-Right split Chef Name & Title -->
                         <div class="card-chef-section">
                             <span class="card-chef-name">Deventhiren</span>
@@ -1721,7 +1756,7 @@
                             <!-- Pill 4: Address (Only visible in minimal theme) -->
                             <div class="contact-pill address-pill" onclick="stopPropagation(event)">
                                 <div class="pill-icon"><i class="fa-solid fa-map-marker-alt"></i></div>
-                                <span class="pill-text" data-i18n="card_address">Vizhuperundhurai, Nangudi Post</span>
+                                <span class="pill-text" data-i18n="card_address">Vizhaperundhurai, Nangudi Post</span>
                             </div>
                         </div>
                     </div>
@@ -1866,8 +1901,9 @@
 
     <script>
         // Active states settings
-        let currentTheme = localStorage.getItem('vcard_theme') || 'minimal';
-        let currentLang = localStorage.getItem('vcard_lang') || 'ta';
+        const urlParams = new URLSearchParams(window.location.search);
+        let currentTheme = urlParams.get('theme') || localStorage.getItem('vcard_theme') || 'minimal';
+        let currentLang = urlParams.get('lang') || localStorage.getItem('vcard_lang') || 'ta';
 
         // Flip Card Logic
         function flipCard(event) {
@@ -1895,7 +1931,8 @@
                 card_subtitle: "CATERING Services",
                 services_script: "Services",
                 card_role: "Executive Chef",
-                card_address: "Vizhuperundhurai, Nangudi Post",
+                card_address: "Vizhaperundhurai, Nangudi Post",
+                card_tagline: "Uniqueness in Taste, Love in Service",
                 card_whatsapp: "WhatsApp Chat",
                 card_location: "Tamil Nadu, India",
                 card_scan: "Scan Menu",
@@ -1928,7 +1965,8 @@
                 card_subtitle: "கேட்டரிங் சர்வீஸ்",
                 services_script: "சர்வீஸ்",
                 card_role: "எக்ஸிகியூட்டிவ் செஃப்",
-                card_address: "விழுப்புரந்துரை, நாங்குடி போஸ்ட்",
+                card_address: "விழப்பெருந்துறை, நாங்குடி போஸ்ட்",
+                card_tagline: "சுவையில் தனித்துவம், சேவையில் அன்பு",
                 card_whatsapp: "வாட்ஸ்அப் சாட் (நேரடி)",
                 card_location: "தமிழ்நாடு, இந்தியா",
                 card_scan: "மெனுவைப் பார்க்க",
